@@ -1,0 +1,48 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+    id 'java-library'
+    id 'application'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
+
+group 'com.udu3324'
+version '1.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        name 'm2-dv8tion'
+        url 'https://m2.dv8tion.net/releases'
+    }
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation 'net.dv8tion:JDA:4.3.0_277'
+    implementation 'com.intellij:forms_rt:7.0.3'
+}
+
+application {
+    mainClass.set('com.udu3324.main.DiscordBot')
+}
+
+task testJar(type: Jar) {
+    manifest {
+        attributes 'Description': 'The official MW Bot by udu3324.'
+    }
+}
+
+// Run task shadowJar to make a runnable Fat/Uber jar
+shadowJar {
+    archiveBaseName.set('MW-Bot')
+    archiveClassifier.set('')
+    archiveVersion.set('')
+    manifest {
+        inheritFrom project.tasks.testJar.manifest
+    }
+}
