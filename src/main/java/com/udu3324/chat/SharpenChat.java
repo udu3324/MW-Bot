@@ -1,6 +1,6 @@
 package com.udu3324.chat;
 
-import com.udu3324.main.Variables;
+import com.udu3324.main.Data;
 
 public class SharpenChat {
     public synchronized void run() {
@@ -39,7 +39,7 @@ public class SharpenChat {
                                 }
 
                                 //final, also removes �e
-                                Variables.sharpen.sendMessage("```" + str.substring(2) + "```").queue(message -> message.crosspost().queue());
+                                Data.sharpen.sendMessage("```" + str.substring(2) + "```").queue(message -> message.crosspost().queue());
                             }
                         }
                     }

@@ -1,6 +1,6 @@
 package com.udu3324.chat;
 
-import com.udu3324.main.Variables;
+import com.udu3324.main.Data;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -34,18 +34,18 @@ public class MarketChat {
     public synchronized void send() {
         if (ChatHook.getMcChat().contains(": >")) {
             //send it with green text
-            Variables.market.sendMessage("```diff\n+ " + market + "\n```").queue(message -> message.crosspost().queue());
+            Data.market.sendMessage("```diff\n+ " + market + "\n```").queue(message -> message.crosspost().queue());
         } else {
             if (ChatHook.getMcChat().contains(": <")) {
                 //send it with red text
-                Variables.market.sendMessage("```diff\n- " + market + "\n```").queue(message -> message.crosspost().queue());
+                Data.market.sendMessage("```diff\n- " + market + "\n```").queue(message -> message.crosspost().queue());
             } else {
                 if (ChatHook.getLine().contains(": [CHAT] * ")) {
                     //send it with blue text
-                    Variables.market.sendMessage("```markdown\n# " + market + "\n```").queue(message -> message.crosspost().queue());
+                    Data.market.sendMessage("```markdown\n# " + market + "\n```").queue(message -> message.crosspost().queue());
                 } else {
                     //send it normally
-                    Variables.market.sendMessage("```diff\n" + market + "\n```").queue(message -> message.crosspost().queue());
+                    Data.market.sendMessage("```diff\n" + market + "\n```").queue(message -> message.crosspost().queue());
                 }
             }
         }

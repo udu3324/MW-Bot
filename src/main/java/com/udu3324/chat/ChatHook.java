@@ -7,7 +7,7 @@ import com.udu3324.events.Fox.FoxEvent;
 import com.udu3324.events.Giant.GiantEvent;
 import com.udu3324.events.Snow.SnowEvent;
 import com.udu3324.main.PlyrLstMsr;
-import com.udu3324.main.Variables;
+import com.udu3324.main.Data;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
@@ -46,7 +46,7 @@ public class ChatHook extends TimerTask {
     public synchronized void run() {
         try {
             Runtime run = Runtime.getRuntime();
-            Process process = run.exec("powershell.exe Get-Content \"" + Variables.logFile + "\" -Wait -Tail 1");
+            Process process = run.exec("powershell.exe Get-Content \"" + Data.logFile + "\" -Wait -Tail 1");
             Scanner scan = new Scanner(process.getInputStream());
 
             Runnable chatHook = () -> {
@@ -54,7 +54,7 @@ public class ChatHook extends TimerTask {
                     line = scan.nextLine();
 
                     // Stop NullPointerException in channel variables
-                    if (Variables.sessionMake == 0) {
+                    if (Data.sessionMake == 0) {
 
                         // Make sure line is shown in chat
                         if (line.contains("[CHAT]")) {
@@ -63,7 +63,7 @@ public class ChatHook extends TimerTask {
                             if (!line.contains(" >> ")) {
 
                                 /* Raw Chat String Converter */
-                                minecraftChat = line.substring(Variables.subString);
+                                minecraftChat = line.substring(Data.subString);
 
                                 /* Discord Syntax Injection Patch */
                                 minecraftChat = minecraftChat.replaceAll("`", "");
@@ -106,13 +106,13 @@ public class ChatHook extends TimerTask {
                                         }
                                     } else {
                                         if (line.contains("Queued as")) {
-                                            Variables.botLog.sendMessage(Variables.pingBot+", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
+                                            Data.botLog.sendMessage(Data.pingBot+", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
                                         }
                                         if (line.contains("Queue=")) {
-                                            Variables.botLog.sendMessage(Variables.pingBot+", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
+                                            Data.botLog.sendMessage(Data.pingBot+", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
                                         }
                                         if (line.contains("Reconnecting...")) {
-                                            Variables.botLog.sendMessage(Variables.pingBot+", the bot is reconnecting into the server.").queue();
+                                            Data.botLog.sendMessage(Data.pingBot+", the bot is reconnecting into the server.").queue();
                                         }
 
                                         /* Remove Starting Color Code */
@@ -141,10 +141,10 @@ public class ChatHook extends TimerTask {
                             }
                         } else {
                             if (line.contains("lastServerEntry: Minecraft Server, attempt:")) {
-                                Variables.botLog.sendMessage("<@395649963415306242>, the bot is attempting to join back into the server.").queue();
+                                Data.botLog.sendMessage("<@395649963415306242>, the bot is attempting to join back into the server.").queue();
                             }
                             if (line.contains("Connecting to play.minewind.net, 25565")) {
-                                Variables.botLog.sendMessage("<@395649963415306242>, the bot is back online/tried to join the server.").queue();
+                                Data.botLog.sendMessage("<@395649963415306242>, the bot is back online/tried to join the server.").queue();
                             }
                         }
                     } else {

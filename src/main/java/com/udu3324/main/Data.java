@@ -3,7 +3,7 @@ package com.udu3324.main;
 import net.dv8tion.jda.api.entities.TextChannel;
 import java.io.File;
 
-public class Variables {
+public class Data {
     /* Assets */
     public static String icon             = "/icon.png";
     public static String icon2            = "/icon2.png";

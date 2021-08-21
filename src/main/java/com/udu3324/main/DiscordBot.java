@@ -26,7 +26,7 @@ public class DiscordBot extends ListenerAdapter {
         JDABuilder
                 .createLight(Token.token, GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
                 .addEventListeners(new DiscordBot())
-                .setActivity(Activity.playing(Variables.activity))
+                .setActivity(Activity.playing(Data.activity))
                 .build();
 
         // Create UI
@@ -39,31 +39,31 @@ public class DiscordBot extends ListenerAdapter {
 
         /*Normal Commands Below*/
         Message help = event.getMessage();
-        if (help.getContentRaw().equals(Variables.command + "help")) {
+        if (help.getContentRaw().equals(Data.command + "help")) {
             EmbedBuilder eb = new EmbedBuilder();
             eb.setTitle("Help");
             eb.setDescription("Minewind Event Bot is a bot to alert events that will happen in Minewind. All commands are only usable for either staff or normal people in the discord.");
             eb.setColor(new Color(9507588));
             eb.setTimestamp(new Date().toInstant());
             eb.setAuthor("MW Event Bot", null, "https://i.imgur.com/5hL08HS.png");
-            eb.addField("Prefix", "The current prefix set is **" + Variables.command + "**", false);
+            eb.addField("Prefix", "The current prefix set is **" + Data.command + "**", false);
 
             eb.addField("Member Commands",
-                    Variables.command + "**help** - shows help embed\n" +
-                            Variables.command + "**player-list** - shows the estimation of players online (measuring chat)\n" +
-                            Variables.command + "**ping** - shows time delay between you and the bot\n" +
-                            Variables.command + "**credits** - shows credits of the bot and the server", false);
+                    Data.command + "**help** - shows help embed\n" +
+                            Data.command + "**player-list** - shows the estimation of players online (measuring chat)\n" +
+                            Data.command + "**ping** - shows time delay between you and the bot\n" +
+                            Data.command + "**credits** - shows credits of the bot and the server", false);
 
             eb.addField("Staff Commands",
-                    Variables.command + "**rules** - shows rules embed\n" +
-                            Variables.command + "**info** - shows information embed\n" +
-                            Variables.command + "**session** - creates a new session for the bot to work", false);
+                    Data.command + "**rules** - shows rules embed\n" +
+                            Data.command + "**info** - shows information embed\n" +
+                            Data.command + "**session** - creates a new session for the bot to work", false);
             MessageChannel channel = event.getChannel();
             channel.sendMessage(eb.build()).queue();
         }
 
         Message credits = event.getMessage();
-        if (credits.getContentRaw().equals(Variables.command + "credits")) {
+        if (credits.getContentRaw().equals(Data.command + "credits")) {
             EmbedBuilder eb = new EmbedBuilder();
             eb.setTitle("Credits");
             eb.setDescription("<@395649963415306242>  - Coder and made castle assets and old bait assets\n" +
@@ -86,7 +86,7 @@ public class DiscordBot extends ListenerAdapter {
         }
 
         Message ping = event.getMessage();
-        if (ping.getContentRaw().equals(Variables.command + "ping")) {
+        if (ping.getContentRaw().equals(Data.command + "ping")) {
             if (ping.isFromType(ChannelType.TEXT)) {
                 MessageChannel channel = event.getChannel();
                 long time = System.currentTimeMillis();
@@ -96,7 +96,7 @@ public class DiscordBot extends ListenerAdapter {
         }
 
         Message playerList = event.getMessage();
-        if (playerList.getContentRaw().equals(Variables.command + "player-list")) {
+        if (playerList.getContentRaw().equals(Data.command + "player-list")) {
             long sT = System.currentTimeMillis(); //start time
             SimpleDateFormat df = new SimpleDateFormat("mm:ss");
             MessageChannel channel = event.getChannel();
@@ -182,12 +182,12 @@ public class DiscordBot extends ListenerAdapter {
 
         /*Staff Commands Below*/
         Message rules = event.getMessage();
-        if (rules.getContentRaw().equals(Variables.command + "rules")) {
+        if (rules.getContentRaw().equals(Data.command + "rules")) {
             if (rules.isFromType(ChannelType.TEXT)) {
                 MessageChannel channel = event.getChannel();
                 assert author != null;
                 String userRoles = String.valueOf(author.getRoles());
-                if (userRoles.contains(Variables.staffRoleID)) {
+                if (userRoles.contains(Data.staffRoleID)) {
                     EmbedBuilder eb = new EmbedBuilder();
                     eb.setTitle("Rules");
                     eb.setDescription("There are four simple server rules below. Make sure to follow them.\r" +
@@ -207,12 +207,12 @@ public class DiscordBot extends ListenerAdapter {
         }
 
         Message info = event.getMessage();
-        if (info.getContentRaw().equals(Variables.command + "info")) {
+        if (info.getContentRaw().equals(Data.command + "info")) {
             if (info.isFromType(ChannelType.TEXT)) {
                 MessageChannel channel = event.getChannel();
                 assert author != null;
                 String userRoles = String.valueOf(author.getRoles());
-                if (userRoles.contains(Variables.staffRoleID)) {
+                if (userRoles.contains(Data.staffRoleID)) {
                     EmbedBuilder eb = new EmbedBuilder();
                     eb.setTitle("Info");
                     eb.setDescription("Below is information about roles, how the server works, and more.");
@@ -237,37 +237,37 @@ public class DiscordBot extends ListenerAdapter {
         }
 
         Message session = event.getMessage();
-        if (session.getContentRaw().equals(Variables.command + "session")) {
+        if (session.getContentRaw().equals(Data.command + "session")) {
             if (ping.isFromType(ChannelType.TEXT)) {
                 MessageChannel channel = event.getChannel();
                 assert author != null;
                 String userRoles = String.valueOf(author.getRoles());
-                if (userRoles.contains(Variables.staffRoleID)) {
+                if (userRoles.contains(Data.staffRoleID)) {
                     channel.sendMessage("Created a new session for the bot.").queue();
-                    Variables.attack = event.getGuild().getTextChannelById(Variables.eventChannelAttackOnGiant);
-                    Variables.snow = event.getGuild().getTextChannelById(Variables.eventChannelSnow);
-                    Variables.abyss = event.getGuild().getTextChannelById(Variables.eventChannelAbyss);
-                    Variables.fox = event.getGuild().getTextChannelById(Variables.eventChannelFox);
-                    Variables.bait = event.getGuild().getTextChannelById(Variables.eventChannelBait);
-                    Variables.castle = event.getGuild().getTextChannelById(Variables.eventChannelCastle);
-                    Variables.botLog = event.getGuild().getTextChannelById(Variables.eventChannelBotLog);
-                    Variables.rawAlert = event.getGuild().getTextChannelById(Variables.eventChannelRawAlert);
-                    Variables.market = event.getGuild().getTextChannelById(Variables.eventChannelMarket);
-                    Variables.sharpen = event.getGuild().getTextChannelById(Variables.eventChannelSharpen);
-                    Variables.votes = event.getGuild().getTextChannelById(Variables.eventChannelVotes);
-                    System.out.println(Variables.attack);
-                    System.out.println(Variables.snow);
-                    System.out.println(Variables.abyss);
-                    System.out.println(Variables.fox);
-                    System.out.println(Variables.bait);
-                    System.out.println(Variables.castle);
-                    System.out.println(Variables.botLog);
-                    System.out.println(Variables.rawAlert);
-                    System.out.println(Variables.market);
-                    System.out.println(Variables.sharpen);
-                    System.out.println(Variables.votes);
-                    Variables.sessionMake = 0; //true
-                    Variables.botLog.sendMessage("Bot has a new session.").queue();
+                    Data.attack = event.getGuild().getTextChannelById(Data.eventChannelAttackOnGiant);
+                    Data.snow = event.getGuild().getTextChannelById(Data.eventChannelSnow);
+                    Data.abyss = event.getGuild().getTextChannelById(Data.eventChannelAbyss);
+                    Data.fox = event.getGuild().getTextChannelById(Data.eventChannelFox);
+                    Data.bait = event.getGuild().getTextChannelById(Data.eventChannelBait);
+                    Data.castle = event.getGuild().getTextChannelById(Data.eventChannelCastle);
+                    Data.botLog = event.getGuild().getTextChannelById(Data.eventChannelBotLog);
+                    Data.rawAlert = event.getGuild().getTextChannelById(Data.eventChannelRawAlert);
+                    Data.market = event.getGuild().getTextChannelById(Data.eventChannelMarket);
+                    Data.sharpen = event.getGuild().getTextChannelById(Data.eventChannelSharpen);
+                    Data.votes = event.getGuild().getTextChannelById(Data.eventChannelVotes);
+                    System.out.println(Data.attack);
+                    System.out.println(Data.snow);
+                    System.out.println(Data.abyss);
+                    System.out.println(Data.fox);
+                    System.out.println(Data.bait);
+                    System.out.println(Data.castle);
+                    System.out.println(Data.botLog);
+                    System.out.println(Data.rawAlert);
+                    System.out.println(Data.market);
+                    System.out.println(Data.sharpen);
+                    System.out.println(Data.votes);
+                    Data.sessionMake = 0; //true
+                    Data.botLog.sendMessage("Bot has a new session.").queue();
                 } else {
                     channel.sendMessage("You do not have access to this command.").queue();
                 }

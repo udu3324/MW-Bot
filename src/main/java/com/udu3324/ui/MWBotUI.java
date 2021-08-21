@@ -1,6 +1,6 @@
 package com.udu3324.ui;
 
-import com.udu3324.main.Variables;
+import com.udu3324.main.Data;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -31,7 +31,7 @@ public class MWBotUI {
             try {
                 UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                 JFrame mwBotUI = new JFrame("MW Bot");
-                mwBotUI.setIconImage(ImageIO.read(Objects.requireNonNull(getClass().getResource(Variables.icon))));
+                mwBotUI.setIconImage(ImageIO.read(Objects.requireNonNull(getClass().getResource(Data.icon))));
                 mwBotUI.setContentPane(rootPanel);
                 mwBotUI.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                 mwBotUI.pack();
@@ -76,7 +76,7 @@ public class MWBotUI {
         Font logoLabelFont = this.$$$getFont$$$("JetBrains Mono NL", Font.BOLD, 48, logoLabel.getFont());
         if (logoLabelFont != null) logoLabel.setFont(logoLabelFont);
         logoLabel.setForeground(new Color(-5000269));
-        logoLabel.setIcon(new ImageIcon(ImageIO.read(Objects.requireNonNull(getClass().getResource(Variables.icon2)))));
+        logoLabel.setIcon(new ImageIcon(ImageIO.read(Objects.requireNonNull(getClass().getResource(Data.icon2)))));
         logoLabel.setText("");
         rootPanel.add(logoLabel, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 2, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         JLabel creditLabel = new JLabel();
