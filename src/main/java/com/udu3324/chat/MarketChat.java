@@ -1,6 +1,5 @@
 package com.udu3324.chat;
 
-import com.udu3324.main.ChatHook;
 import com.udu3324.main.Variables;
 
 import java.util.Arrays;

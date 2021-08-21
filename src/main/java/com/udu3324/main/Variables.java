@@ -66,6 +66,7 @@ public class Variables {
     public static String pingBait                  = "<@&863992343152689192>";
     public static String pingCastle                = "<@&863992408824086589>";
 
+    public static String pingBot                = "<@&863992408824086589>";
     //public static TextChannel nameOfEvent;
     public static TextChannel attack;
     public static TextChannel snow;

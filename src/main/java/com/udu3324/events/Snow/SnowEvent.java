@@ -1,6 +1,6 @@
 package com.udu3324.events.Snow;
 
-import com.udu3324.main.ChatHook;
+import com.udu3324.chat.ChatHook;
 import com.udu3324.main.Variables;
 
 import java.util.Date;

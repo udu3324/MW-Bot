@@ -1,14 +1,13 @@
-package com.udu3324.main;
+package com.udu3324.chat;
 
-import com.udu3324.chat.MarketChat;
-import com.udu3324.chat.SharpenChat;
-import com.udu3324.chat.VoteChat;
 import com.udu3324.events.Abyss.AbyssEvent;
 import com.udu3324.events.Bait.BaitEvent;
 import com.udu3324.events.Castle.CastleEvent;
 import com.udu3324.events.Fox.FoxEvent;
 import com.udu3324.events.Giant.GiantEvent;
 import com.udu3324.events.Snow.SnowEvent;
+import com.udu3324.main.PlyrLstMsr;
+import com.udu3324.main.Variables;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
@@ -107,13 +106,13 @@ public class ChatHook extends TimerTask {
                                         }
                                     } else {
                                         if (line.contains("Queued as")) {
-                                            Variables.botLog.sendMessage("<@395649963415306242>, the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
+                                            Variables.botLog.sendMessage(Variables.pingBot+", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
                                         }
                                         if (line.contains("Queue=")) {
-                                            Variables.botLog.sendMessage("<@395649963415306242>, the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
+                                            Variables.botLog.sendMessage(Variables.pingBot+", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
                                         }
                                         if (line.contains("Reconnecting...")) {
-                                            Variables.botLog.sendMessage("<@395649963415306242>, the bot is reconnecting into the server.").queue();
+                                            Variables.botLog.sendMessage(Variables.pingBot+", the bot is reconnecting into the server.").queue();
                                         }
 
                                         /* Remove Starting Color Code */

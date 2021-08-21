@@ -1,6 +1,6 @@
 package com.udu3324.events.Castle;
 
-import com.udu3324.main.ChatHook;
+import com.udu3324.chat.ChatHook;
 import com.udu3324.main.Variables;
 
 import java.util.Date;
