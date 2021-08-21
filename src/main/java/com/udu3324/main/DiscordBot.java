@@ -23,7 +23,7 @@ public class DiscordBot extends ListenerAdapter {
     public static void main(String[] args) throws LoginException {
         // Discord Bot Builder
         JDABuilder
-                .createLight(Variables.token, GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
+                .createLight(Token.token, GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
                 .addEventListeners(new DiscordBot())
                 .setActivity(Activity.playing(Variables.activity))
                 .build();
