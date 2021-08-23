@@ -7,9 +7,6 @@ public class Data {
     /* Assets */
     public static String icon             = "/icon.png";
     public static String icon2            = "/icon2.png";
-    //public static String nameOfEventSoonIcon =    "/nameOfEvent_soon_upscale.png";
-    //public static String nameOfEventStartIcon =   "/nameOfEvent_Start.gif";
-    //public static String nameOfEventEndIcon =     "/nameOfEvent_End.gif";
     public static String giantSoonIcon      = "/giant_soon_upscale.png";
     public static String giantStartIcon     = "/attack_Start.gif";
     public static String giantEndIcon       = "/attack_End.gif";
@@ -23,9 +20,9 @@ public class Data {
     public static String foxChanSpawned     = "/fox_chanSpawn_upscale.png";
     public static String foxChanDied        = "/fox_chanDie_upscale.png";
     public static String foxEndIcon         = "/fox_end_upscale.png";
-    public static String baitSoonIcon       = "/bait_soon_upscale.png";
-    public static String baitStartIcon      = "/fish_Start.gif";
-    public static String baitEndIcon        = "/fish_End.gif";
+    public static String baitSoonIcon       = "/bait_soon_upscale.png"; //deprecate soon
+    public static String baitStartIcon      = "/fish_Start.gif"; //deprecate soon
+    public static String baitEndIcon        = "/fish_End.gif"; //deprecate soon
     public static String castleSoonIcon     = "/castle_soon_upscale.png";
     public static String castleStartIcon    = "/castle_start_upscale.png";
     public static String castleEndIcon      = "/castle_end_upscale.png";
@@ -48,7 +45,7 @@ public class Data {
     //public static String eventChannelNameOfEvent = "channelID";
     public static String eventChannelAttackOnGiant = "863975877648711691";
     public static String eventChannelSnow          = "863978973138124810";
-    public static String eventChannelAbyss         = "863978950794805249";
+    public static String eventChannelAbyss         = "863978950794805249"; //removed from mw (keep just in case)
     public static String eventChannelFox           = "863979026803458080";
     public static String eventChannelBait          = "863979084080873492";
     public static String eventChannelCastle        = "863979109898256395";
@@ -61,16 +58,16 @@ public class Data {
     //public static String pingEvent = "";
     public static String pingAttack                = "<@&863991934988058624>";
     public static String pingSnow                  = "<@&863992054593093662>";
-    public static String pingAbyss                 = "<@&863992157521707008>";
+    public static String pingAbyss                 = "<@&863992157521707008>"; //removed from mw (keep just in case)
     public static String pingFox                   = "<@&863992277705162762>";
     public static String pingBait                  = "<@&863992343152689192>";
     public static String pingCastle                = "<@&863992408824086589>";
+    public static String pingMaintainer            = "<@395649963415306242>";
 
-    public static String pingBot                = "<@&863992408824086589>";
     //public static TextChannel nameOfEvent;
     public static TextChannel attack;
     public static TextChannel snow;
-    public static TextChannel abyss;
+    public static TextChannel abyss; //removed from mw (keep just in case)
     public static TextChannel fox;
     public static TextChannel bait;
     public static TextChannel castle;

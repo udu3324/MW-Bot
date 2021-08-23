@@ -106,13 +106,13 @@ public class ChatHook extends TimerTask {
                                         }
                                     } else {
                                         if (line.contains("Queued as")) {
-                                            Data.botLog.sendMessage(Data.pingBot+", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
+                                            Data.botLog.sendMessage(Data.pingMaintainer +", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
                                         }
                                         if (line.contains("Queue=")) {
-                                            Data.botLog.sendMessage(Data.pingBot+", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
+                                            Data.botLog.sendMessage(Data.pingMaintainer +", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
                                         }
                                         if (line.contains("Reconnecting...")) {
-                                            Data.botLog.sendMessage(Data.pingBot+", the bot is reconnecting into the server.").queue();
+                                            Data.botLog.sendMessage(Data.pingMaintainer +", the bot is reconnecting into the server.").queue();
                                         }
 
                                         /* Remove Starting Color Code */

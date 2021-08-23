@@ -14,7 +14,7 @@ import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DiscordBot extends ListenerAdapter {
+public class MainBot extends ListenerAdapter {
     // TailerListener To Scan Chat
     static {
         ChatHook object = new ChatHook();
@@ -25,7 +25,7 @@ public class DiscordBot extends ListenerAdapter {
         // Discord Bot Builder
         JDABuilder
                 .createLight(Token.token, GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
-                .addEventListeners(new DiscordBot())
+                .addEventListeners(new MainBot())
                 .setActivity(Activity.playing(Data.activity))
                 .build();
 
