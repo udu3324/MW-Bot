@@ -7,10 +7,6 @@
 [![GitHub release](https://img.shields.io/github/v/release/udu3324/MW-Bot)](https://github.com/udu3324/MW-Bot/releases/latest)
 <img src="https://img.shields.io/github/license/udu3324/MW-Bot">
 <img src="https://img.shields.io/github/issues/udu3324/MW-Bot">
-<img src="https://img.shields.io/github/issues-closed/udu3324/MW-Bot">
-<img src="https://img.shields.io/github/issues-pr/udu3324/MW-Bot">
-<img src="https://img.shields.io/github/issues-pr-closed/udu3324/MW-Bot">
-
 <img src="https://img.shields.io/github/forks/udu3324/MW-Bot?style=social">
 <img src="https://img.shields.io/github/stars/udu3324/MW-Bot?style=social">
 
