@@ -6,12 +6,13 @@ import com.udu3324.events.Castle.CastleEvent;
 import com.udu3324.events.Fox.FoxEvent;
 import com.udu3324.events.Giant.GiantEvent;
 import com.udu3324.events.Snow.SnowEvent;
-import com.udu3324.main.PlyrLstMsr;
 import com.udu3324.main.Data;
+import com.udu3324.main.PlyrLstMsr;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Scanner;
+import java.util.TimerTask;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -106,13 +107,13 @@ public class ChatHook extends TimerTask {
                                         }
                                     } else {
                                         if (line.contains("Queued as")) {
-                                            Data.botLog.sendMessage(Data.pingMaintainer +", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
+                                            Data.botLog.sendMessage(Data.pingMaintainer + ", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
                                         }
                                         if (line.contains("Queue=")) {
-                                            Data.botLog.sendMessage(Data.pingMaintainer +", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
+                                            Data.botLog.sendMessage(Data.pingMaintainer + ", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
                                         }
                                         if (line.contains("Reconnecting...")) {
-                                            Data.botLog.sendMessage(Data.pingMaintainer +", the bot is reconnecting into the server.").queue();
+                                            Data.botLog.sendMessage(Data.pingMaintainer + ", the bot is reconnecting into the server.").queue();
                                         }
 
                                         /* Remove Starting Color Code */

@@ -15,7 +15,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainBot extends ListenerAdapter {
-    // TailerListener To Scan Chat
     static {
         ChatHook object = new ChatHook();
         object.run();

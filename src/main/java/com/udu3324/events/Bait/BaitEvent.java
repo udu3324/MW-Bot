@@ -2,6 +2,7 @@ package com.udu3324.events.Bait;
 
 import com.udu3324.chat.ChatHook;
 import com.udu3324.main.Data;
+import com.udu3324.main.FixString;
 
 import java.util.Date;
 import java.util.Objects;
@@ -74,17 +75,17 @@ public class BaitEvent {
         }
         if (ChatHook.getMcChat().contains("fish")) {
             if (ChatHook.getMcChat().contains("e1)")) {
-                BaitVar.bait1stPlace = ChatHook.getMwEvent().substring(5);
+                BaitVar.bait1stPlace = FixString.fix(ChatHook.getMwEvent()).substring(5);
             }
             if (ChatHook.getMcChat().contains("e2)")) {
-                BaitVar.bait2ndPlace = ChatHook.getMwEvent().substring(5);
+                BaitVar.bait2ndPlace = FixString.fix(ChatHook.getMwEvent()).substring(5);
             }
             if (ChatHook.getMcChat().contains("e3)")) {
-                BaitVar.bait3rdPlace = ChatHook.getMwEvent().substring(5);
-                BaitVar.baitEnd.setDescription("Bait has ended.\n```" +
+                BaitVar.bait3rdPlace = FixString.fix(ChatHook.getMwEvent()).substring(5);
+                BaitVar.baitEnd.setDescription("Bait has ended.\n" +
                         "1) " + BaitVar.bait1stPlace + "\n" +
                         "2) " + BaitVar.bait2ndPlace + "\n" +
-                        "3) " + BaitVar.bait3rdPlace + "```");
+                        "3) " + BaitVar.bait3rdPlace);
                 BaitVar.baitEnd.setTimestamp(new Date().toInstant());
                 Data.bait.sendMessage(BaitVar.baitEnd.build())
                         .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.baitEndIcon)), "image.gif")

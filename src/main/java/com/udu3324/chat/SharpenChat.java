@@ -34,7 +34,7 @@ public class SharpenChat {
                                 if (str.charAt(remove2) == 'f') {
                                     str.deleteCharAt(remove2).deleteCharAt(remove2 - 1);
                                 }
-                                if (str.charAt(remove2) == 'a' && str.charAt(remove2 + 1) != 'c' && str.charAt(remove2 + 1) != 'j') {
+                                if (str.charAt(remove2) == 'a' && str.charAt(remove2 + 1) != 'c' && str.charAt(remove2 + 1) != 'j' && str.charAt(remove2 + 1) != 'p') {
                                     str.deleteCharAt(remove2).deleteCharAt(remove2 - 1);
                                 }
 

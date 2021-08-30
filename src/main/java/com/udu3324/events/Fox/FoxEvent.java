@@ -2,6 +2,7 @@ package com.udu3324.events.Fox;
 
 import com.udu3324.chat.ChatHook;
 import com.udu3324.main.Data;
+import com.udu3324.main.FixString;
 
 import java.util.Date;
 import java.util.Objects;
@@ -64,34 +65,34 @@ public class FoxEvent {
             Data.rawAlert.sendMessage("`" + "Fox Hunt has started! " + "`" + Data.pingFox).queue(message -> message.crosspost().queue());
         }
         if (ChatHook.getMcChat().contains("dFox-chan spawned at ")) {
-            FoxVar.foxChanSpawn.setDescription(ChatHook.getMwEvent());
+            FoxVar.foxChanSpawn.setDescription(FixString.fix(ChatHook.getMwEvent()));
             FoxVar.foxChanSpawn.setTimestamp(new Date().toInstant());
             Data.fox.sendMessage(FoxVar.foxChanSpawn.build())
                     .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.foxChanSpawned)), "image.png")
                     .queue(message -> message.crosspost().queue());
-            Data.rawAlert.sendMessage("`" + ChatHook.getMwEvent() + "`").queue(message -> message.crosspost().queue());
+            Data.rawAlert.sendMessage("`" + FixString.fix(ChatHook.getMwEvent()) + "`").queue(message -> message.crosspost().queue());
         }
         if (ChatHook.getMwEvent().contains(" has slain Fox-chan!")) {
-            FoxVar.foxChanKilled.setDescription(ChatHook.getMwEvent());
+            FoxVar.foxChanKilled.setDescription(FixString.fix(ChatHook.getMwEvent()));
             FoxVar.foxChanKilled.setTimestamp(new Date().toInstant());
             Data.fox.sendMessage(FoxVar.foxChanKilled.build())
                     .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.foxChanDied)), "image.png")
                     .queue(message -> message.crosspost().queue());
-            Data.rawAlert.sendMessage("`" + ChatHook.getMwEvent() + "`").queue(message -> message.crosspost().queue());
+            Data.rawAlert.sendMessage("`" + FixString.fix(ChatHook.getMwEvent()) + "`").queue(message -> message.crosspost().queue());
         }
         if (ChatHook.getMcChat().contains("foxes")) {
             if (ChatHook.getMcChat().contains("e1)")) {
-                FoxVar.fox1stPlace = ChatHook.getMwEvent().substring(5);
+                FoxVar.fox1stPlace = FixString.fix(ChatHook.getMwEvent()).substring(5);
             }
             if (ChatHook.getMcChat().contains("e2)")) {
-                FoxVar.fox2ndPlace = ChatHook.getMwEvent().substring(5);
+                FoxVar.fox2ndPlace = FixString.fix(ChatHook.getMwEvent()).substring(5);
             }
             if (ChatHook.getMcChat().contains("e3)")) {
-                FoxVar.fox3rdPlace = ChatHook.getMwEvent().substring(5);
-                FoxVar.foxEnd.setDescription("Fox Hunt has ended.\n```" +
+                FoxVar.fox3rdPlace = FixString.fix(ChatHook.getMwEvent()).substring(5);
+                FoxVar.foxEnd.setDescription("Fox Hunt has ended.\n" +
                         "1) " + FoxVar.fox1stPlace + "\n" +
                         "2) " + FoxVar.fox2ndPlace + "\n" +
-                        "3) " + FoxVar.fox3rdPlace + "```");
+                        "3) " + FoxVar.fox3rdPlace);
                 FoxVar.foxEnd.setTimestamp(new Date().toInstant());
                 Data.fox.sendMessage(FoxVar.foxEnd.build())
                         .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.foxEndIcon)), "image.png")

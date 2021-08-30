@@ -22,6 +22,7 @@ public class MarketChat {
             }
         }
     }
+
     public synchronized void filter() {
         //todo spam filter (does not work)
         String temp = Arrays.toString(ChatVariables.spamFilter);
@@ -31,6 +32,7 @@ public class MarketChat {
             ChatVariables.spamFilter[0] = ChatHook.getMcChat();
         }
     }
+
     public synchronized void send() {
         if (ChatHook.getMcChat().contains(": >")) {
             //send it with green text

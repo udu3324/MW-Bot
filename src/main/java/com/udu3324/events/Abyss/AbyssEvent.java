@@ -2,6 +2,7 @@ package com.udu3324.events.Abyss;
 
 import com.udu3324.chat.ChatHook;
 import com.udu3324.main.Data;
+import com.udu3324.main.FixString;
 
 import java.util.Date;
 import java.util.Objects;
@@ -73,12 +74,13 @@ public class AbyssEvent {
             timer.schedule(task, 10000);
         }
         if (ChatHook.getMwEvent().contains(" wins the abyssal event! Poseidon is pleased!")) {
-            AbyssVar.abyssEnd.setDescription(ChatHook.getMwEvent());
+            String fixed = FixString.fix(ChatHook.getMwEvent());
+            AbyssVar.abyssEnd.setDescription(fixed);
             AbyssVar.abyssEnd.setTimestamp(new Date().toInstant());
             Data.abyss.sendMessage(AbyssVar.abyssEnd.build())
                     .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.abyssEndIcon)), "image.gif")
                     .queue(message -> message.crosspost().queue());
-            Data.rawAlert.sendMessage("`" + ChatHook.getMwEvent() + "`").queue(message -> message.crosspost().queue());
+            Data.rawAlert.sendMessage("`" + fixed + "`").queue(message -> message.crosspost().queue());
         }
     }
 }
