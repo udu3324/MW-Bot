@@ -1,7 +1,7 @@
 package com.udu3324.main;
 
 import com.udu3324.chat.ChatHook;
-import com.udu3324.ui.MWBotUI;
+import com.udu3324.ui.BotUI;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.*;
@@ -29,7 +29,7 @@ public class MainBot extends ListenerAdapter {
                 .build();
 
         // Create UI
-        new MWBotUI();
+        new BotUI();
     }
 
     // Bot Commands
