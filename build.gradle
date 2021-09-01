@@ -28,7 +28,7 @@ dependencies {
 }
 
 application {
-    mainClass.set('com.udu3324.main.MainBot')
+    mainClass.set('com.udu3324.main.DiscordBot')
 }
 
 task testJar(type: Jar) {

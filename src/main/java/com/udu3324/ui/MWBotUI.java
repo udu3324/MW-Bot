@@ -12,7 +12,7 @@ import java.net.URI;
 import java.util.Locale;
 import java.util.Objects;
 
-public class BotUI {
+public class MWBotUI {
     private JPanel rootPanel;
     private JButton exitButton;
     private JButton githubButton;
@@ -26,7 +26,7 @@ public class BotUI {
         }
     }
 
-    public BotUI() {
+    public MWBotUI() {
         SwingUtilities.invokeLater(() -> {
             try {
                 UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
