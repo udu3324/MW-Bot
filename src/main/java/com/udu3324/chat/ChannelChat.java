@@ -1,23 +1,31 @@
 package com.udu3324.chat;
 
 import com.udu3324.main.Data;
+import org.apache.commons.lang3.StringUtils;
 
 public class ChannelChat {
+    private static void send(String message) {
+        int count = StringUtils.countMatches(message, ":");
+        if (count >= 1 || message.contains("*")) {
+            Data.chat.sendMessage(message).queue();
+        }
+    }
+
     public synchronized void run() {
         if (ChatHook.getMcChat().contains(": >")) {
             //send it with green text
-            Data.botLog.sendMessage("```diff\n+ " + ChatHook.getMcChat() + "\n```").queue();
+            send("```diff\n+ " + ChatHook.getMcChat() + "\n```");
         } else {
             if (ChatHook.getMcChat().contains(": <")) {
                 //send it with red text
-                Data.botLog.sendMessage("```diff\n- " + ChatHook.getMcChat() + "\n```").queue();
+                send("```diff\n- " + ChatHook.getMcChat() + "\n```");
             } else {
                 if (ChatHook.getLine().contains(": [CHAT] * ")) {
                     //send it with blue text
-                    Data.botLog.sendMessage("```markdown\n# " + ChatHook.getMcChat() + "\n```").queue();
+                    send("```markdown\n# " + ChatHook.getMcChat() + "\n```");
                 } else {
                     //send it normally
-                    Data.botLog.sendMessage("```diff\n" + ChatHook.getMcChat() + "\n```").queue();
+                    send("```diff\n" + ChatHook.getMcChat() + "\n```");
                 }
             }
         }

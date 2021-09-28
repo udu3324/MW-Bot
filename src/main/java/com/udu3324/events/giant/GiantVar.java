@@ -1,4 +1,4 @@
-package com.udu3324.events.Giant;
+package com.udu3324.events.giant;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 
@@ -6,14 +6,14 @@ import java.awt.*;
 
 public class GiantVar {
     //Attack On Giant
-    public static EmbedBuilder attack30m = new EmbedBuilder();
-    public static EmbedBuilder attack20m = new EmbedBuilder();
-    public static EmbedBuilder attack10m = new EmbedBuilder();
-    public static EmbedBuilder attack5m = new EmbedBuilder();
-    public static EmbedBuilder attack1m = new EmbedBuilder();
-    public static EmbedBuilder attack10s = new EmbedBuilder();
-    public static EmbedBuilder attackStart = new EmbedBuilder();
-    public static EmbedBuilder attackEnd = new EmbedBuilder();
+    public static final EmbedBuilder attack30m = new EmbedBuilder();
+    public static final EmbedBuilder attack20m = new EmbedBuilder();
+    public static final EmbedBuilder attack10m = new EmbedBuilder();
+    public static final EmbedBuilder attack5m = new EmbedBuilder();
+    public static final EmbedBuilder attack1m = new EmbedBuilder();
+    public static final EmbedBuilder attack10s = new EmbedBuilder();
+    public static final EmbedBuilder attackStart = new EmbedBuilder();
+    public static final EmbedBuilder attackEnd = new EmbedBuilder();
 
     static {
         attack30m.setDescription("Attack on Giant begins in 30 minutes.");

@@ -1,4 +1,4 @@
-package com.udu3324.events.Fox;
+package com.udu3324.events.fox;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 
@@ -6,16 +6,16 @@ import java.awt.*;
 
 public class FoxVar {
     //Fox
-    public static EmbedBuilder fox30m = new EmbedBuilder();
-    public static EmbedBuilder fox20m = new EmbedBuilder();
-    public static EmbedBuilder fox10m = new EmbedBuilder();
-    public static EmbedBuilder fox5m = new EmbedBuilder();
-    public static EmbedBuilder fox1m = new EmbedBuilder();
-    public static EmbedBuilder fox10s = new EmbedBuilder();
-    public static EmbedBuilder foxStart = new EmbedBuilder();
-    public static EmbedBuilder foxChanSpawn = new EmbedBuilder();
-    public static EmbedBuilder foxChanKilled = new EmbedBuilder();
-    public static EmbedBuilder foxEnd = new EmbedBuilder();
+    public static final EmbedBuilder fox30m = new EmbedBuilder();
+    public static final EmbedBuilder fox20m = new EmbedBuilder();
+    public static final EmbedBuilder fox10m = new EmbedBuilder();
+    public static final EmbedBuilder fox5m = new EmbedBuilder();
+    public static final EmbedBuilder fox1m = new EmbedBuilder();
+    public static final EmbedBuilder fox10s = new EmbedBuilder();
+    public static final EmbedBuilder foxStart = new EmbedBuilder();
+    public static final EmbedBuilder foxChanSpawn = new EmbedBuilder();
+    public static final EmbedBuilder foxChanKilled = new EmbedBuilder();
+    public static final EmbedBuilder foxEnd = new EmbedBuilder();
     public static String fox1stPlace;
     public static String fox2ndPlace;
     public static String fox3rdPlace;

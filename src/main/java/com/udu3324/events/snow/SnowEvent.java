@@ -1,4 +1,4 @@
-package com.udu3324.events.Snow;
+package com.udu3324.events.snow;
 
 import com.udu3324.chat.ChatHook;
 import com.udu3324.main.Data;

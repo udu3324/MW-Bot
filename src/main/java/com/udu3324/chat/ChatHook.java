@@ -1,11 +1,11 @@
 package com.udu3324.chat;
 
-import com.udu3324.events.Abyss.AbyssEvent;
-import com.udu3324.events.Bait.BaitEvent;
-import com.udu3324.events.Castle.CastleEvent;
-import com.udu3324.events.Fox.FoxEvent;
-import com.udu3324.events.Giant.GiantEvent;
-import com.udu3324.events.Snow.SnowEvent;
+import com.udu3324.events.abyss.AbyssEvent;
+import com.udu3324.events.bait.BaitEvent;
+import com.udu3324.events.castle.CastleEvent;
+import com.udu3324.events.fox.FoxEvent;
+import com.udu3324.events.giant.GiantEvent;
+import com.udu3324.events.snow.SnowEvent;
 import com.udu3324.main.Data;
 import com.udu3324.main.PlyrLstMsr;
 import org.apache.commons.lang3.StringUtils;
@@ -93,9 +93,8 @@ public class ChatHook extends TimerTask {
                                 PlyrLstMsr list = new PlyrLstMsr();
                                 list.run();
 
-                                //todo add back when global death message are removed
-                                //ChannelChat channel = new ChannelChat();
-                                //channel.run();
+                                ChannelChat channel = new ChannelChat();
+                                channel.run();
 
                                 /* MW Event Chat Searcher/Filter */
                                 if (!minecraftChat.contains("*")) {
@@ -107,13 +106,13 @@ public class ChatHook extends TimerTask {
                                         }
                                     } else {
                                         if (line.contains("Queued as")) {
-                                            Data.botLog.sendMessage(Data.pingMaintainer + ", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
+                                            Data.chat.sendMessage(Data.pingMaintainer + ", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
                                         }
                                         if (line.contains("Queue=")) {
-                                            Data.botLog.sendMessage(Data.pingMaintainer + ", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
+                                            Data.chat.sendMessage(Data.pingMaintainer + ", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
                                         }
                                         if (line.contains("Reconnecting...")) {
-                                            Data.botLog.sendMessage(Data.pingMaintainer + ", the bot is reconnecting into the server.").queue();
+                                            Data.chat.sendMessage(Data.pingMaintainer + ", the bot is reconnecting into the server.").queue();
                                         }
 
                                         /* Remove Starting Color Code */
@@ -142,10 +141,10 @@ public class ChatHook extends TimerTask {
                             }
                         } else {
                             if (line.contains("lastServerEntry: Minecraft Server, attempt:")) {
-                                Data.botLog.sendMessage("<@395649963415306242>, the bot is attempting to join back into the server.").queue();
+                                Data.chat.sendMessage("<@395649963415306242>, the bot is attempting to join back into the server.").queue();
                             }
                             if (line.contains("Connecting to play.minewind.net, 25565")) {
-                                Data.botLog.sendMessage("<@395649963415306242>, the bot is back online/tried to join the server.").queue();
+                                Data.chat.sendMessage("<@395649963415306242>, the bot is back online/tried to join the server.").queue();
                             }
                         }
                     } else {

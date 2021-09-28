@@ -1,4 +1,4 @@
-package com.udu3324.events.Giant;
+package com.udu3324.events.giant;
 
 import com.udu3324.chat.ChatHook;
 import com.udu3324.main.Data;

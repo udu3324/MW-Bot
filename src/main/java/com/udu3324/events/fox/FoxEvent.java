@@ -1,4 +1,4 @@
-package com.udu3324.events.Fox;
+package com.udu3324.events.fox;
 
 import com.udu3324.chat.ChatHook;
 import com.udu3324.main.Data;

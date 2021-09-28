@@ -1,4 +1,4 @@
-package com.udu3324.events.Castle;
+package com.udu3324.events.castle;
 
 import com.udu3324.chat.ChatHook;
 import com.udu3324.main.Data;

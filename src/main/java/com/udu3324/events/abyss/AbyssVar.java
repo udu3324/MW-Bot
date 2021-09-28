@@ -1,4 +1,4 @@
-package com.udu3324.events.Abyss;
+package com.udu3324.events.abyss;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 
@@ -6,14 +6,14 @@ import java.awt.*;
 
 public class AbyssVar {
     //Abyssal
-    public static EmbedBuilder abyss30m = new EmbedBuilder();
-    public static EmbedBuilder abyss20m = new EmbedBuilder();
-    public static EmbedBuilder abyss10m = new EmbedBuilder();
-    public static EmbedBuilder abyss5m = new EmbedBuilder();
-    public static EmbedBuilder abyss1m = new EmbedBuilder();
-    public static EmbedBuilder abyss10s = new EmbedBuilder();
-    public static EmbedBuilder abyssStart = new EmbedBuilder();
-    public static EmbedBuilder abyssEnd = new EmbedBuilder();
+    public static final EmbedBuilder abyss30m = new EmbedBuilder();
+    public static final EmbedBuilder abyss20m = new EmbedBuilder();
+    public static final EmbedBuilder abyss10m = new EmbedBuilder();
+    public static final EmbedBuilder abyss5m = new EmbedBuilder();
+    public static final EmbedBuilder abyss1m = new EmbedBuilder();
+    public static final EmbedBuilder abyss10s = new EmbedBuilder();
+    public static final EmbedBuilder abyssStart = new EmbedBuilder();
+    public static final EmbedBuilder abyssEnd = new EmbedBuilder();
 
     static {
         abyss30m.setDescription("Abyssal event begins in 30 minutes.");

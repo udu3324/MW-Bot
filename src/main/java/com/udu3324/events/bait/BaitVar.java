@@ -1,4 +1,4 @@
-package com.udu3324.events.Bait;
+package com.udu3324.events.bait;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 
@@ -6,14 +6,14 @@ import java.awt.*;
 
 public class BaitVar {
     //Bait
-    public static EmbedBuilder bait30m = new EmbedBuilder();
-    public static EmbedBuilder bait20m = new EmbedBuilder();
-    public static EmbedBuilder bait10m = new EmbedBuilder();
-    public static EmbedBuilder bait5m = new EmbedBuilder();
-    public static EmbedBuilder bait1m = new EmbedBuilder();
-    public static EmbedBuilder bait10s = new EmbedBuilder();
-    public static EmbedBuilder baitStart = new EmbedBuilder();
-    public static EmbedBuilder baitEnd = new EmbedBuilder();
+    public static final EmbedBuilder bait30m = new EmbedBuilder();
+    public static final EmbedBuilder bait20m = new EmbedBuilder();
+    public static final EmbedBuilder bait10m = new EmbedBuilder();
+    public static final EmbedBuilder bait5m = new EmbedBuilder();
+    public static final EmbedBuilder bait1m = new EmbedBuilder();
+    public static final EmbedBuilder bait10s = new EmbedBuilder();
+    public static final EmbedBuilder baitStart = new EmbedBuilder();
+    public static final EmbedBuilder baitEnd = new EmbedBuilder();
     public static String bait1stPlace;
     public static String bait2ndPlace;
     public static String bait3rdPlace;

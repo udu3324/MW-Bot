@@ -1,4 +1,4 @@
-package com.udu3324.events.Snow;
+package com.udu3324.events.snow;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 
@@ -6,8 +6,8 @@ import java.awt.*;
 
 public class SnowVar {
     //Snowvasion
-    public static EmbedBuilder snowStart = new EmbedBuilder();
-    public static EmbedBuilder snowEnd = new EmbedBuilder();
+    public static final EmbedBuilder snowStart = new EmbedBuilder();
+    public static final EmbedBuilder snowEnd = new EmbedBuilder();
 
     static {
         snowStart.setDescription("Snowmen invade the spawn!");

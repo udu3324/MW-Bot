@@ -26,7 +26,7 @@ public class Session extends ListenerAdapter {
                     Data.fox = event.getGuild().getTextChannelById(Data.eventChannelFox);
                     Data.bait = event.getGuild().getTextChannelById(Data.eventChannelBait);
                     Data.castle = event.getGuild().getTextChannelById(Data.eventChannelCastle);
-                    Data.botLog = event.getGuild().getTextChannelById(Data.eventChannelBotLog);
+                    Data.chat = event.getGuild().getTextChannelById(Data.eventChannelBotLog);
                     Data.rawAlert = event.getGuild().getTextChannelById(Data.eventChannelRawAlert);
                     Data.market = event.getGuild().getTextChannelById(Data.eventChannelMarket);
                     Data.sharpen = event.getGuild().getTextChannelById(Data.eventChannelSharpen);
@@ -37,13 +37,13 @@ public class Session extends ListenerAdapter {
                     System.out.println(Data.fox);
                     System.out.println(Data.bait);
                     System.out.println(Data.castle);
-                    System.out.println(Data.botLog);
+                    System.out.println(Data.chat);
                     System.out.println(Data.rawAlert);
                     System.out.println(Data.market);
                     System.out.println(Data.sharpen);
                     System.out.println(Data.votes);
                     Data.sessionMake = 0; //true
-                    Data.botLog.sendMessage("Bot has a new session.").queue();
+                    Data.chat.sendMessage("Bot has a new session.").queue();
                 } else {
                     channel.sendMessage("You do not have access to this command.").queue();
                 }

@@ -2,52 +2,48 @@ package com.udu3324.chat;
 
 import com.udu3324.main.Data;
 
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.Random;
 
 public class MarketChat {
     public String market;
     public String scan;
+
+    private static void send(String message) {
+        Random rd = new Random();
+        if (rd.nextBoolean()) {
+            Data.chat.sendMessage(message).queue();
+        }
+    }
 
     public synchronized void run() {
         market = ChatHook.getMcChat();
         scan = market.toLowerCase();
         if (!scan.contains("*") && !scan.contains("irl") && !scan.contains("trader")) {
             if (scan.contains("sell")) { //sell, selling, sellers
-                filter();
+                colorMessage();
             } else if (scan.contains("buy")) { //buy, buying, buyers
-                filter();
+                colorMessage();
             } else if (scan.contains("offer")) { //offer, offering, offers
-                filter();
+                colorMessage();
             }
         }
     }
 
-    public synchronized void filter() {
-        //todo spam filter (does not work)
-        String temp = Arrays.toString(ChatVariables.spamFilter);
-        if (!ChatHook.getMcChat().contains(temp)) {
-            send();
-            Collections.rotate(Arrays.asList(ChatVariables.spamFilter), 1);
-            ChatVariables.spamFilter[0] = ChatHook.getMcChat();
-        }
-    }
-
-    public synchronized void send() {
+    private synchronized void colorMessage() {
         if (ChatHook.getMcChat().contains(": >")) {
             //send it with green text
-            Data.market.sendMessage("```diff\n+ " + market + "\n```").queue(message -> message.crosspost().queue());
+            send("```diff\n+ " + ChatHook.getMcChat() + "\n```");
         } else {
             if (ChatHook.getMcChat().contains(": <")) {
                 //send it with red text
-                Data.market.sendMessage("```diff\n- " + market + "\n```").queue(message -> message.crosspost().queue());
+                send("```diff\n- " + ChatHook.getMcChat() + "\n```");
             } else {
                 if (ChatHook.getLine().contains(": [CHAT] * ")) {
                     //send it with blue text
-                    Data.market.sendMessage("```markdown\n# " + market + "\n```").queue(message -> message.crosspost().queue());
+                    send("```markdown\n# " + ChatHook.getMcChat() + "\n```");
                 } else {
                     //send it normally
-                    Data.market.sendMessage("```diff\n" + market + "\n```").queue(message -> message.crosspost().queue());
+                    send("```diff\n" + ChatHook.getMcChat() + "\n```");
                 }
             }
         }
