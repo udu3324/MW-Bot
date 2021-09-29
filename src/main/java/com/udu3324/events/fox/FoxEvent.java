@@ -83,12 +83,15 @@ public class FoxEvent {
         if (ChatHook.getMcChat().contains("foxes")) {
             if (ChatHook.getMcChat().contains("e1)")) {
                 FoxVar.fox1stPlace = FixString.fix(ChatHook.getMwEvent()).substring(5);
+                FoxVar.fox1stPlaceRaw = ChatHook.getMwEvent().substring(5);
             }
             if (ChatHook.getMcChat().contains("e2)")) {
                 FoxVar.fox2ndPlace = FixString.fix(ChatHook.getMwEvent()).substring(5);
+                FoxVar.fox2ndPlaceRaw = ChatHook.getMwEvent().substring(5);
             }
             if (ChatHook.getMcChat().contains("e3)")) {
                 FoxVar.fox3rdPlace = FixString.fix(ChatHook.getMwEvent()).substring(5);
+                FoxVar.fox3rdPlaceRaw = ChatHook.getMwEvent().substring(5);
                 FoxVar.foxEnd.setDescription("Fox Hunt has ended.\n" +
                         "1) " + FoxVar.fox1stPlace + "\n" +
                         "2) " + FoxVar.fox2ndPlace + "\n" +
@@ -98,12 +101,16 @@ public class FoxEvent {
                         .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.foxEndIcon)), "image.png")
                         .queue(message -> message.crosspost().queue());
                 Data.rawAlert.sendMessage("`" + "Fox Hunt has ended.\n" +
-                        "1) " + FoxVar.fox1stPlace + "\n" +
-                        "2) " + FoxVar.fox2ndPlace + "\n" +
-                        "3) " + FoxVar.fox3rdPlace + "`").queue(message -> message.crosspost().queue());
+                        "1) " + FoxVar.fox1stPlaceRaw + "\n" +
+                        "2) " + FoxVar.fox2ndPlaceRaw + "\n" +
+                        "3) " + FoxVar.fox3rdPlaceRaw + "`").queue(message -> message.crosspost().queue());
                 FoxVar.fox1stPlace = "";
                 FoxVar.fox2ndPlace = "";
                 FoxVar.fox3rdPlace = "";
+                FoxVar.fox1stPlaceRaw = "";
+                FoxVar.fox2ndPlaceRaw = "";
+                FoxVar.fox3rdPlaceRaw = "";
+
             }
         }
     }

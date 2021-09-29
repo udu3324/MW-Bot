@@ -17,6 +17,9 @@ public class BaitVar {
     public static String bait1stPlace;
     public static String bait2ndPlace;
     public static String bait3rdPlace;
+    public static String bait1stPlaceRaw;
+    public static String bait2ndPlaceRaw;
+    public static String bait3rdPlaceRaw;
 
     static {
         bait30m.setDescription("Fishing event begins in 30 minutes.");

@@ -11,7 +11,7 @@ public class MarketChat {
     private static void send(String message) {
         Random rd = new Random();
         if (rd.nextBoolean()) {
-            Data.chat.sendMessage(message).queue();
+            Data.market.sendMessage(message).queue();
         }
     }
 

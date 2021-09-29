@@ -19,6 +19,9 @@ public class FoxVar {
     public static String fox1stPlace;
     public static String fox2ndPlace;
     public static String fox3rdPlace;
+    public static String fox1stPlaceRaw;
+    public static String fox2ndPlaceRaw;
+    public static String fox3rdPlaceRaw;
 
     static {
         fox30m.setDescription("Fox hunt begins in 30 minutes.");

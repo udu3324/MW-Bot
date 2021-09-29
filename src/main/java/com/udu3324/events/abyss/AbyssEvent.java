@@ -80,7 +80,7 @@ public class AbyssEvent {
             Data.abyss.sendMessage(AbyssVar.abyssEnd.build())
                     .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.abyssEndIcon)), "image.gif")
                     .queue(message -> message.crosspost().queue());
-            Data.rawAlert.sendMessage("`" + fixed + "`").queue(message -> message.crosspost().queue());
+            Data.rawAlert.sendMessage("`" + ChatHook.getMwEvent() + "`").queue(message -> message.crosspost().queue());
         }
     }
 }

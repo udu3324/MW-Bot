@@ -76,12 +76,15 @@ public class BaitEvent {
         if (ChatHook.getMcChat().contains("fish")) {
             if (ChatHook.getMcChat().contains("e1)")) {
                 BaitVar.bait1stPlace = FixString.fix(ChatHook.getMwEvent()).substring(5);
+                BaitVar.bait1stPlaceRaw = ChatHook.getMwEvent().substring(5);
             }
             if (ChatHook.getMcChat().contains("e2)")) {
                 BaitVar.bait2ndPlace = FixString.fix(ChatHook.getMwEvent()).substring(5);
+                BaitVar.bait2ndPlaceRaw = ChatHook.getMwEvent().substring(5);
             }
             if (ChatHook.getMcChat().contains("e3)")) {
                 BaitVar.bait3rdPlace = FixString.fix(ChatHook.getMwEvent()).substring(5);
+                BaitVar.bait3rdPlaceRaw = ChatHook.getMwEvent().substring(5);
                 BaitVar.baitEnd.setDescription("Bait has ended.\n" +
                         "1) " + BaitVar.bait1stPlace + "\n" +
                         "2) " + BaitVar.bait2ndPlace + "\n" +
@@ -91,12 +94,15 @@ public class BaitEvent {
                         .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.baitEndIcon)), "image.gif")
                         .queue(message -> message.crosspost().queue());
                 Data.rawAlert.sendMessage("`" + "Bait has ended.\n" +
-                        "1) " + BaitVar.bait1stPlace + "\n" +
-                        "2) " + BaitVar.bait2ndPlace + "\n" +
-                        "3) " + BaitVar.bait3rdPlace + "`").queue(message -> message.crosspost().queue());
+                        "1) " + BaitVar.bait1stPlaceRaw + "\n" +
+                        "2) " + BaitVar.bait2ndPlaceRaw + "\n" +
+                        "3) " + BaitVar.bait3rdPlaceRaw + "`").queue(message -> message.crosspost().queue());
                 BaitVar.bait1stPlace = "";
                 BaitVar.bait2ndPlace = "";
                 BaitVar.bait3rdPlace = "";
+                BaitVar.bait1stPlaceRaw = "";
+                BaitVar.bait2ndPlaceRaw = "";
+                BaitVar.bait3rdPlaceRaw = "";
             }
         }
     }
