@@ -6,14 +6,14 @@ import java.awt.*;
 
 public class AbyssVar {
     //Abyssal
-    public static final EmbedBuilder abyss30m = new EmbedBuilder();
-    public static final EmbedBuilder abyss20m = new EmbedBuilder();
-    public static final EmbedBuilder abyss10m = new EmbedBuilder();
-    public static final EmbedBuilder abyss5m = new EmbedBuilder();
-    public static final EmbedBuilder abyss1m = new EmbedBuilder();
-    public static final EmbedBuilder abyss10s = new EmbedBuilder();
-    public static final EmbedBuilder abyssStart = new EmbedBuilder();
-    public static final EmbedBuilder abyssEnd = new EmbedBuilder();
+    protected static final EmbedBuilder abyss30m = new EmbedBuilder();
+    protected static final EmbedBuilder abyss20m = new EmbedBuilder();
+    protected static final EmbedBuilder abyss10m = new EmbedBuilder();
+    protected static final EmbedBuilder abyss5m = new EmbedBuilder();
+    protected static final EmbedBuilder abyss1m = new EmbedBuilder();
+    protected static final EmbedBuilder abyss10s = new EmbedBuilder();
+    protected static final EmbedBuilder abyssStart = new EmbedBuilder();
+    protected static final EmbedBuilder abyssEnd = new EmbedBuilder();
 
     static {
         abyss30m.setDescription("Abyssal event begins in 30 minutes.");

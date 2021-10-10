@@ -11,6 +11,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.awt.*;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class Info extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event) {
@@ -38,6 +39,7 @@ public class Info extends ListenerAdapter {
                     eb.addField("Contributor", "Contributor role represent the people that contributed to help make the MW Events Server/Bot in some way.", false);
                     eb.addField("Server Booster", "Server Booster role represent the Server Boosters that boosted the server in the MW Events Server.", false);
                     channel.sendMessage(eb.build()).queue();
+                    info.delete().queueAfter(3, TimeUnit.SECONDS);
                 } else {
                     channel.sendMessage("You do not have access to this command.").queue();
                 }

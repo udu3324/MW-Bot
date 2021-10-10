@@ -6,22 +6,22 @@ import java.awt.*;
 
 public class FoxVar {
     //Fox
-    public static final EmbedBuilder fox30m = new EmbedBuilder();
-    public static final EmbedBuilder fox20m = new EmbedBuilder();
-    public static final EmbedBuilder fox10m = new EmbedBuilder();
-    public static final EmbedBuilder fox5m = new EmbedBuilder();
-    public static final EmbedBuilder fox1m = new EmbedBuilder();
-    public static final EmbedBuilder fox10s = new EmbedBuilder();
-    public static final EmbedBuilder foxStart = new EmbedBuilder();
-    public static final EmbedBuilder foxChanSpawn = new EmbedBuilder();
-    public static final EmbedBuilder foxChanKilled = new EmbedBuilder();
-    public static final EmbedBuilder foxEnd = new EmbedBuilder();
-    public static String fox1stPlace;
-    public static String fox2ndPlace;
-    public static String fox3rdPlace;
-    public static String fox1stPlaceRaw;
-    public static String fox2ndPlaceRaw;
-    public static String fox3rdPlaceRaw;
+    protected static final EmbedBuilder fox30m = new EmbedBuilder();
+    protected static final EmbedBuilder fox20m = new EmbedBuilder();
+    protected static final EmbedBuilder fox10m = new EmbedBuilder();
+    protected static final EmbedBuilder fox5m = new EmbedBuilder();
+    protected static final EmbedBuilder fox1m = new EmbedBuilder();
+    protected static final EmbedBuilder fox10s = new EmbedBuilder();
+    protected static final EmbedBuilder foxStart = new EmbedBuilder();
+    protected static final EmbedBuilder foxChanSpawn = new EmbedBuilder();
+    protected static final EmbedBuilder foxChanKilled = new EmbedBuilder();
+    protected static final EmbedBuilder foxEnd = new EmbedBuilder();
+    protected static String fox1stPlace;
+    protected static String fox2ndPlace;
+    protected static String fox3rdPlace;
+    protected static String fox1stPlaceRaw;
+    protected static String fox2ndPlaceRaw;
+    protected static String fox3rdPlaceRaw;
 
     static {
         fox30m.setDescription("Fox hunt begins in 30 minutes.");

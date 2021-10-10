@@ -6,15 +6,15 @@ import java.awt.*;
 
 public class CastleVar {
     //Castle
-    public static final EmbedBuilder castle1hr = new EmbedBuilder();
-    public static final EmbedBuilder castle30m = new EmbedBuilder();
-    public static final EmbedBuilder castle20m = new EmbedBuilder();
-    public static final EmbedBuilder castle10m = new EmbedBuilder();
-    public static final EmbedBuilder castle5m = new EmbedBuilder();
-    public static final EmbedBuilder castle1m = new EmbedBuilder();
-    public static final EmbedBuilder castle10s = new EmbedBuilder();
-    public static final EmbedBuilder castleStart = new EmbedBuilder();
-    public static final EmbedBuilder castleEnd = new EmbedBuilder();
+    protected static final EmbedBuilder castle1hr = new EmbedBuilder();
+    protected static final EmbedBuilder castle30m = new EmbedBuilder();
+    protected static final EmbedBuilder castle20m = new EmbedBuilder();
+    protected static final EmbedBuilder castle10m = new EmbedBuilder();
+    protected static final EmbedBuilder castle5m = new EmbedBuilder();
+    protected static final EmbedBuilder castle1m = new EmbedBuilder();
+    protected static final EmbedBuilder castle10s = new EmbedBuilder();
+    protected static final EmbedBuilder castleStart = new EmbedBuilder();
+    protected static final EmbedBuilder castleEnd = new EmbedBuilder();
 
     static {
         castle1hr.setDescription("Battle for Minewind begins in 1 hour.");

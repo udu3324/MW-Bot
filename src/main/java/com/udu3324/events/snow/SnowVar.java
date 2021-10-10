@@ -6,8 +6,8 @@ import java.awt.*;
 
 public class SnowVar {
     //Snowvasion
-    public static final EmbedBuilder snowStart = new EmbedBuilder();
-    public static final EmbedBuilder snowEnd = new EmbedBuilder();
+    protected static final EmbedBuilder snowStart = new EmbedBuilder();
+    protected static final EmbedBuilder snowEnd = new EmbedBuilder();
 
     static {
         snowStart.setDescription("Snowmen invade the spawn!");

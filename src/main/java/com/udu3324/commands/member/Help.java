@@ -30,8 +30,7 @@ public class Help extends ListenerAdapter {
 
             eb.addField("Staff Commands",
                     Data.command + "**rules** - shows rules embed\n" +
-                            Data.command + "**info** - shows information embed\n" +
-                            Data.command + "**session** - creates a new session for the bot to work", false);
+                            Data.command + "**info** - shows information embed", false);
             MessageChannel channel = event.getChannel();
             channel.sendMessage(eb.build()).queue();
         }

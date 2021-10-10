@@ -6,20 +6,20 @@ import java.awt.*;
 
 public class BaitVar {
     //Bait
-    public static final EmbedBuilder bait30m = new EmbedBuilder();
-    public static final EmbedBuilder bait20m = new EmbedBuilder();
-    public static final EmbedBuilder bait10m = new EmbedBuilder();
-    public static final EmbedBuilder bait5m = new EmbedBuilder();
-    public static final EmbedBuilder bait1m = new EmbedBuilder();
-    public static final EmbedBuilder bait10s = new EmbedBuilder();
-    public static final EmbedBuilder baitStart = new EmbedBuilder();
-    public static final EmbedBuilder baitEnd = new EmbedBuilder();
-    public static String bait1stPlace;
-    public static String bait2ndPlace;
-    public static String bait3rdPlace;
-    public static String bait1stPlaceRaw;
-    public static String bait2ndPlaceRaw;
-    public static String bait3rdPlaceRaw;
+    protected static final EmbedBuilder bait30m = new EmbedBuilder();
+    protected static final EmbedBuilder bait20m = new EmbedBuilder();
+    protected static final EmbedBuilder bait10m = new EmbedBuilder();
+    protected static final EmbedBuilder bait5m = new EmbedBuilder();
+    protected static final EmbedBuilder bait1m = new EmbedBuilder();
+    protected static final EmbedBuilder bait10s = new EmbedBuilder();
+    protected static final EmbedBuilder baitStart = new EmbedBuilder();
+    protected static final EmbedBuilder baitEnd = new EmbedBuilder();
+    protected static String bait1stPlace;
+    protected static String bait2ndPlace;
+    protected static String bait3rdPlace;
+    protected static String bait1stPlaceRaw;
+    protected static String bait2ndPlaceRaw;
+    protected static String bait3rdPlaceRaw;
 
     static {
         bait30m.setDescription("Fishing event begins in 30 minutes.");

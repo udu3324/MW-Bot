@@ -6,14 +6,14 @@ import java.awt.*;
 
 public class GiantVar {
     //Attack On Giant
-    public static final EmbedBuilder attack30m = new EmbedBuilder();
-    public static final EmbedBuilder attack20m = new EmbedBuilder();
-    public static final EmbedBuilder attack10m = new EmbedBuilder();
-    public static final EmbedBuilder attack5m = new EmbedBuilder();
-    public static final EmbedBuilder attack1m = new EmbedBuilder();
-    public static final EmbedBuilder attack10s = new EmbedBuilder();
-    public static final EmbedBuilder attackStart = new EmbedBuilder();
-    public static final EmbedBuilder attackEnd = new EmbedBuilder();
+    protected static final EmbedBuilder attack30m = new EmbedBuilder();
+    protected static final EmbedBuilder attack20m = new EmbedBuilder();
+    protected static final EmbedBuilder attack10m = new EmbedBuilder();
+    protected static final EmbedBuilder attack5m = new EmbedBuilder();
+    protected static final EmbedBuilder attack1m = new EmbedBuilder();
+    protected static final EmbedBuilder attack10s = new EmbedBuilder();
+    protected static final EmbedBuilder attackStart = new EmbedBuilder();
+    protected static final EmbedBuilder attackEnd = new EmbedBuilder();
 
     static {
         attack30m.setDescription("Attack on Giant begins in 30 minutes.");
