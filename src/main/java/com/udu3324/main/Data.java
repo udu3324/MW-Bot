@@ -28,19 +28,17 @@ public class Data {
     public static final String castleStartIcon = "/castle_start_upscale.png";
     public static final String castleEndIcon = "/castle_end_upscale.png";
 
-    /* Substring */
-    //31 - 1.16.5 - "[##:##:##] [main/INFO]: [CHAT] "
-    //40 - 1.17.1 - "[##:##:##] [Render thread/INFO]: [CHAT] "
-    public static final Integer subString = 40;
-
     /* Discord */
     //C:/Users/build/AppData/Roaming/.minecraft2/logs/latest.log
     //C:/Users/build/Desktop/MultiMC/instances/1.16.51/.minecraft/logs/latest.log
     //C:/Users/build/Desktop/MultiMC/instances/1.17.1/.minecraft/logs/latest.log
-    public static final File logFile = new File("C:/Users/build/Desktop/MultiMC/instances/1.17.1/.minecraft/logs/latest.log");
+    //latest.log if file is in directory
+    public static final File logFile = new File("C:\\Users\\build\\Desktop\\MCC\\latest.log");
     public static final String activity = "play.minewind.net";
     public static final String command = ">";
     public static final String staffRoleID = "863977201324785685";
+
+
 
     //public static String eventChannelNameOfEvent = "channelID";
     public static final String channelAttackOnGiant = "863975877648711691";
@@ -55,7 +53,6 @@ public class Data {
     public static final String channelSharpen = "863979288763170817";
     public static final String channelVotes = "870454989544386590";
     public static final String guildID = "863975877205032960";
-    public static Integer sessionMake = 1;
 
     //public static String pingEvent = "";
     public static final String pingAttack = "<@&863991934988058624>";

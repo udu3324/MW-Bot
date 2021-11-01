@@ -64,7 +64,7 @@ public class CastleEvent {
                     .queue(message -> message.crosspost().queue());
             Data.rawAlert.sendMessage("`" + "Castle begins in 10s. " + "`").queue(message -> message.crosspost().queue());
         }
-        if (ChatHook.getMwEvent().equals("Battle for Minewind has begun!")) {
+        if (ChatHook.getMcChat().equals("Battle for Minewind has begun!")) {
             Data.castle.sendMessage("|| " + Data.pingCastle + " ||").queue();
             CastleVar.castleStart.setTimestamp(new Date().toInstant());
             Data.castle.sendMessage(CastleVar.castleStart.build())
@@ -72,16 +72,16 @@ public class CastleEvent {
                     .queue(message -> message.crosspost().queue());
             Data.rawAlert.sendMessage("`" + "Castle has started! " + "`" + Data.pingCastle).queue(message -> message.crosspost().queue());
         }
-        if (ChatHook.getMwEvent().contains(") hold the Minewind City!")) {
-            CastleVar.castleEnd.setDescription(ChatHook.getMwEvent());
+        if (ChatHook.getMcChat().contains(") hold the Minewind City!")) {
+            CastleVar.castleEnd.setDescription(ChatHook.getMcChat());
             CastleVar.castleEnd.setTimestamp(new Date().toInstant());
             Data.castle.sendMessage(CastleVar.castleEnd.build())
                     .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.castleEndIcon)), "image.png")
                     .queue(message -> message.crosspost().queue());
-            Data.rawAlert.sendMessage("`" + ChatHook.getMwEvent() + "`").queue(message -> message.crosspost().queue());
+            Data.rawAlert.sendMessage("`" + ChatHook.getMcChat() + "`").queue(message -> message.crosspost().queue());
         }
-        if (ChatHook.getMwEvent().contains(") take the Minewind City from ")) {
-            StringBuilder string = new StringBuilder(ChatHook.getMwEvent());
+        if (ChatHook.getMcChat().contains(") take the Minewind City from ")) {
+            StringBuilder string = new StringBuilder(ChatHook.getMcChat());
             int removeChar = string.indexOf("\\n");
             int nextLineIndex = removeChar + 1;
             string.replace(removeChar, removeChar + 4, " ");

@@ -38,7 +38,7 @@ public class MarketChat {
                 //send it with red text
                 send("```diff\n- " + ChatHook.getMcChat() + "\n```");
             } else {
-                if (ChatHook.getLine().contains(": [CHAT] * ")) {
+                if (ChatHook.getMcChat().charAt(0) == '*' && ChatHook.getMcChat().charAt(1) == ' ') {
                     //send it with blue text
                     send("```markdown\n# " + ChatHook.getMcChat() + "\n```");
                 } else {
