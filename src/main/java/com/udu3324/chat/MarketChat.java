@@ -9,6 +9,7 @@ public class MarketChat {
     public String scan;
 
     private static void send(String message) {
+        //50 50 chance to send the market msg. this is to kinda stop spam and make my bot have less rate limits
         Random rd = new Random();
         if (rd.nextBoolean()) {
             Data.market.sendMessage(message).queue();
@@ -18,6 +19,7 @@ public class MarketChat {
     public synchronized void run() {
         market = ChatHook.getMcChat();
         scan = market.toLowerCase();
+        //if chat contains keywords, continue to send
         if (!scan.contains("*") && !scan.contains("irl") && !scan.contains("trader")) {
             if (scan.contains("sell")) { //sell, selling, sellers
                 colorMessage();

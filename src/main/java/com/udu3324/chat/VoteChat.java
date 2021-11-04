@@ -7,6 +7,7 @@ public class VoteChat {
     public synchronized void run() {
         String chatVotes = ChatHook.getMcChat();
         int count = StringUtils.countMatches(chatVotes, ":");
+        //if chat contains a vote, send it
         if (chatVotes.contains("/vote -> ") && count == 1 && !chatVotes.contains("*")) {
             Data.votes.sendMessage("```" + chatVotes + "```").queue(message -> message.crosspost().queue());
         }

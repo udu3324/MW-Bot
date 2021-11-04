@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 public class ChannelChat {
     private static void send(String message) {
         int count = StringUtils.countMatches(message, ":");
+        //if chat contains at least one : or *, continue to send
         if (count >= 1 || message.contains("*")) {
             Data.chat.sendMessage(message).queue();
         }

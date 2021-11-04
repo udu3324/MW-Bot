@@ -13,6 +13,7 @@ import java.util.Date;
 public class Help extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event) {
         Message help = event.getMessage();
+        //send the help embed
         if (help.getContentRaw().equals(Data.command + "help")) {
             EmbedBuilder eb = new EmbedBuilder();
             eb.setTitle("Help");

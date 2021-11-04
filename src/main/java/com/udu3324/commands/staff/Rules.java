@@ -18,6 +18,7 @@ public class Rules extends ListenerAdapter {
         Member author = event.getMember();
 
         Message rules = event.getMessage();
+        //send a rule embed
         if (rules.getContentRaw().equals(Data.command + "rules")) {
             if (rules.isFromType(ChannelType.TEXT)) {
                 MessageChannel channel = event.getChannel();

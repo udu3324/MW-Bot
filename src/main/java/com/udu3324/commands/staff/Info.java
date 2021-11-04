@@ -18,6 +18,7 @@ public class Info extends ListenerAdapter {
         Member author = event.getMember();
 
         Message info = event.getMessage();
+        //send a info embed
         if (info.getContentRaw().equals(Data.command + "info")) {
             if (info.isFromType(ChannelType.TEXT)) {
                 MessageChannel channel = event.getChannel();

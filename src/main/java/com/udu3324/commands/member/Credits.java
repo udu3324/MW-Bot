@@ -13,6 +13,7 @@ import java.util.Date;
 public class Credits extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event) {
         Message credits = event.getMessage();
+        //send the credits msg :)
         if (credits.getContentRaw().equals(Data.command + "credits")) {
             EmbedBuilder eb = new EmbedBuilder();
             eb.setTitle("Credits");

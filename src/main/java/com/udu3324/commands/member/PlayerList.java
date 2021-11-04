@@ -14,6 +14,7 @@ import java.util.Date;
 
 public class PlayerList extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event) {
+        //really in-efficient code that does stuff that I should probably burn because no one uses it
         Message playerList = event.getMessage();
         if (playerList.getContentRaw().equals(Data.command + "player-list")) {
             long sT = System.currentTimeMillis(); //start time

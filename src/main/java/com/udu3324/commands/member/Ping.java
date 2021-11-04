@@ -10,6 +10,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 public class Ping extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event) {
         Message ping = event.getMessage();
+        //gets the ping of the bot
         if (ping.getContentRaw().equals(Data.command + "ping")) {
             if (ping.isFromType(ChannelType.TEXT)) {
                 MessageChannel channel = event.getChannel();

@@ -5,6 +5,7 @@ import com.udu3324.chat.ChatHook;
 import java.util.Arrays;
 
 public class PlyrLstMsr {
+    //really in-efficient code that does stuff that I should probably burn because no one uses it
     public static final String[] playerData = {"Empty0", "1", "Empty1", "1", "Empty2", "1", "Empty3", "1", "Empty4", "1", "Empty5", "1",
             "Empty6", "1", "Empty7", "1", "Empty8", "1", "Empty9", "1", "Empty10", "1", "Empty11", "1", "Empty12", "1",
             "Empty13", "1", "Empty14", "1", "Empty15", "1", "Empty16", "1", "Empty17", "1", "Empty18", "1", "Empty19", "1",
