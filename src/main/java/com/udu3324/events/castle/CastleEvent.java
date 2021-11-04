@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class CastleEvent {
     public synchronized void run() {
-        if (ChatHook.getMcChat().contains("1 hour")) {
+        if (ChatHook.getMcChat().contains("Battle for Minewind begins in 1 hour.")) {
             Data.castle.sendMessage("|| " + Data.pingCastle + " ||").queue();
             CastleVar.castle1hr.setTimestamp(new Date().toInstant());
             Data.castle.sendMessage(CastleVar.castle1hr.build())

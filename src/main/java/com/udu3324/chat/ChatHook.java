@@ -49,7 +49,7 @@ public class ChatHook extends TimerTask {
     String tailerCmd;
     {
         if (System.getProperty("os.name").contains("Linux")) {
-            tailerCmd = "powershell.exe Get-Content \"" + Data.logFile + "\" -Wait -Tail 1"; //todo, does not work
+            tailerCmd = "todo command"; //todo, does not work
         } else if (System.getProperty("os.name").contains("Windows")) {
             tailerCmd = "powershell.exe Get-Content \"" + Data.logFile + "\" -Wait -Tail 1";
         }
@@ -57,10 +57,12 @@ public class ChatHook extends TimerTask {
 
     public synchronized void run() {
         try {
+            //run tailer command and read from it
             Runtime run = Runtime.getRuntime();
             Process process = run.exec(tailerCmd);
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
+            //basically a while replacement as I hate while statements
             Runnable chatHook = () -> {
                 try {
                     if (reader.ready()) {
@@ -84,6 +86,8 @@ public class ChatHook extends TimerTask {
     }
     public synchronized void chatLook() {
         minecraftChat = line;
+
+        //check if chat contain these critical lines to then alert maintainer
         if (minecraftChat.contains("Connection has been lost.")) {
             Data.chat.sendMessage("Bot has lost connection to the server. " + Data.pingMaintainer).queue();
         } else if (minecraftChat.contains("Logging in...")) {
