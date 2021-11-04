@@ -118,11 +118,7 @@ public class ChatHook extends TimerTask {
         /* MW Event Chat Searcher/Filter */
         System.out.println("c" + count + " | " + minecraftChat);
         if (!minecraftChat.contains("*")) {
-            if (count > 0) {
-                if (count == 1 && minecraftChat.contains("7\\nLearn more: minewind.com/battle")) {
-                    castle.run();
-                }
-            } else {
+            if (count <= 0) {
                 if (minecraftChat.contains("Queued as")) {
                     Data.chat.sendMessage(Data.pingMaintainer + ", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
                 }

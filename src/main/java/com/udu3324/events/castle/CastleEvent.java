@@ -8,8 +8,7 @@ import java.util.Objects;
 
 public class CastleEvent {
     public synchronized void run() {
-        int stringLength = ChatHook.getMcChat().length();
-        if (stringLength == 74 && ChatHook.getMcChat().contains("1 hour")) {
+        if (ChatHook.getMcChat().contains("1 hour")) {
             Data.castle.sendMessage("|| " + Data.pingCastle + " ||").queue();
             CastleVar.castle1hr.setTimestamp(new Date().toInstant());
             Data.castle.sendMessage(CastleVar.castle1hr.build())
@@ -17,7 +16,7 @@ public class CastleEvent {
                     .queue(message -> message.crosspost().queue());
             Data.rawAlert.sendMessage("`" + "Castle begins in 1hr. " + "`" + Data.pingCastle).queue(message -> message.crosspost().queue());
         }
-        if (stringLength == 78 && ChatHook.getMcChat().contains("30 minutes")) {
+        if (ChatHook.getMcChat().equals("Battle for Minewind begins in 30 minutes.")) {
             Data.castle.sendMessage("|| " + Data.pingCastle + " ||").queue();
             CastleVar.castle30m.setTimestamp(new Date().toInstant());
             Data.castle.sendMessage(CastleVar.castle30m.build())
@@ -25,7 +24,7 @@ public class CastleEvent {
                     .queue(message -> message.crosspost().queue());
             Data.rawAlert.sendMessage("`" + "Castle begins in 30m. " + "`" + Data.pingCastle).queue(message -> message.crosspost().queue());
         }
-        if (stringLength == 78 && ChatHook.getMcChat().contains("20 minutes")) {
+        if (ChatHook.getMcChat().equals("Battle for Minewind begins in 20 minutes.")) {
             Data.castle.sendMessage("|| " + Data.pingCastle + " ||").queue();
             CastleVar.castle20m.setTimestamp(new Date().toInstant());
             Data.castle.sendMessage(CastleVar.castle20m.build())
@@ -33,7 +32,7 @@ public class CastleEvent {
                     .queue(message -> message.crosspost().queue());
             Data.rawAlert.sendMessage("`" + "Castle begins in 20m. " + "`" + Data.pingCastle).queue(message -> message.crosspost().queue());
         }
-        if (stringLength == 78 && ChatHook.getMcChat().contains("10 minutes")) {
+        if (ChatHook.getMcChat().equals("Battle for Minewind begins in 10 minutes.")) {
             Data.castle.sendMessage("|| " + Data.pingCastle + " ||").queue();
             CastleVar.castle10m.setTimestamp(new Date().toInstant());
             Data.castle.sendMessage(CastleVar.castle10m.build())
@@ -41,7 +40,7 @@ public class CastleEvent {
                     .queue(message -> message.crosspost().queue());
             Data.rawAlert.sendMessage("`" + "Castle begins in 10m. " + "`" + Data.pingCastle).queue(message -> message.crosspost().queue());
         }
-        if (stringLength == 77 && ChatHook.getMcChat().contains("5 minutes")) {
+        if (ChatHook.getMcChat().equals("Battle for Minewind begins in 5 minutes.")) {
             Data.castle.sendMessage("|| " + Data.pingCastle + " ||").queue();
             CastleVar.castle5m.setTimestamp(new Date().toInstant());
             Data.castle.sendMessage(CastleVar.castle5m.build())
@@ -49,7 +48,7 @@ public class CastleEvent {
                     .queue(message -> message.crosspost().queue());
             Data.rawAlert.sendMessage("`" + "Castle begins in 5m. " + "`" + Data.pingCastle).queue(message -> message.crosspost().queue());
         }
-        if (stringLength == 76 && ChatHook.getMcChat().contains("1 minute")) {
+        if (ChatHook.getMcChat().equals("Battle for Minewind begins in 1 minute.")) {
             Data.castle.sendMessage("|| " + Data.pingCastle + " ||").queue();
             CastleVar.castle1m.setTimestamp(new Date().toInstant());
             Data.castle.sendMessage(CastleVar.castle1m.build())
@@ -57,7 +56,7 @@ public class CastleEvent {
                     .queue(message -> message.crosspost().queue());
             Data.rawAlert.sendMessage("`" + "Castle begins in 1m. " + "`" + Data.pingCastle).queue(message -> message.crosspost().queue());
         }
-        if (stringLength == 78 && ChatHook.getMcChat().contains("10 seconds")) {
+        if (ChatHook.getMcChat().equals("Battle for Minewind begins in 10 seconds.")) {
             CastleVar.castle10s.setTimestamp(new Date().toInstant());
             Data.castle.sendMessage(CastleVar.castle10s.build())
                     .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.castleSoonIcon)), "image.png")
