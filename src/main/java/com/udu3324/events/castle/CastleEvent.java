@@ -80,19 +80,12 @@ public class CastleEvent {
             Data.rawAlert.sendMessage("`" + ChatHook.getMcChat() + "`").queue(message -> message.crosspost().queue());
         }
         if (ChatHook.getMcChat().contains(") take the Minewind City from ")) {
-            StringBuilder string = new StringBuilder(ChatHook.getMcChat());
-            int removeChar = string.indexOf("\\n");
-            int nextLineIndex = removeChar + 1;
-            string.replace(removeChar, removeChar + 4, " ");
-            string.insert(nextLineIndex, "\n");
-            string.append(".");
-
-            CastleVar.castleEnd.setDescription(string);
+            CastleVar.castleEnd.setDescription(ChatHook.getMcChat());
             CastleVar.castleEnd.setTimestamp(new Date().toInstant());
             Data.castle.sendMessage(CastleVar.castleEnd.build())
                     .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.castleEndIcon)), "image.png")
                     .queue(message -> message.crosspost().queue());
-            Data.rawAlert.sendMessage("`" + string + "`").queue(message -> message.crosspost().queue());
+            Data.rawAlert.sendMessage("`" + ChatHook.getMcChat() + "`").queue(message -> message.crosspost().queue());
         }
     }
 }
