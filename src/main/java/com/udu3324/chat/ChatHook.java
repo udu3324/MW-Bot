@@ -138,8 +138,7 @@ public class ChatHook extends TimerTask {
                 abyss.run(); //good
                 fox.run(); //good
                 bait.run(); //good
-
-                castle.run();
+                castle.run(); //good
             }
         }
     }
