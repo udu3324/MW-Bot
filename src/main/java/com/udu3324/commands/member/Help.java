@@ -25,7 +25,6 @@ public class Help extends ListenerAdapter {
 
             eb.addField("Member Commands",
                     Data.command + "**help** - shows help embed\n" +
-                            Data.command + "**player-list** - shows the estimation of players online (measuring chat)\n" +
                             Data.command + "**ping** - shows time delay between you and the bot\n" +
                             Data.command + "**credits** - shows credits of the bot and the server", false);
 

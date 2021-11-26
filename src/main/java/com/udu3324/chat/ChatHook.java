@@ -1,13 +1,12 @@
 package com.udu3324.chat;
 
-import com.udu3324.events.abyss.AbyssEvent;
+import com.udu3324.events.abyss.AbyssalEvent;
 import com.udu3324.events.bait.BaitEvent;
 import com.udu3324.events.castle.CastleEvent;
-import com.udu3324.events.fox.FoxEvent;
-import com.udu3324.events.giant.GiantEvent;
-import com.udu3324.events.snow.SnowEvent;
+import com.udu3324.events.fox.FoxHuntEvent;
+import com.udu3324.events.giant.AttackOnGiantEvent;
+import com.udu3324.events.snow.SnowvasionEvent;
 import com.udu3324.main.Data;
-import com.udu3324.main.PlyrLstMsr;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.BufferedReader;
@@ -29,20 +28,16 @@ public class ChatHook extends TimerTask {
     public static Integer getCount() {
         return count;
     }
-    public static String getChatIGN() {
-        return IGNString;
-    }
 
     MarketChat market = new MarketChat();
     SharpenChat sharpen = new SharpenChat();
     VoteChat vote = new VoteChat();
-    PlyrLstMsr list = new PlyrLstMsr();
     ChannelChat channel = new ChannelChat();
 
-    GiantEvent giant = new GiantEvent();
-    SnowEvent snow = new SnowEvent();
-    AbyssEvent abyss = new AbyssEvent();
-    FoxEvent fox = new FoxEvent();
+    AttackOnGiantEvent giant = new AttackOnGiantEvent();
+    SnowvasionEvent snow = new SnowvasionEvent();
+    AbyssalEvent abyss = new AbyssalEvent();
+    FoxHuntEvent fox = new FoxHuntEvent();
     BaitEvent bait = new BaitEvent();
     CastleEvent castle = new CastleEvent();
 
@@ -68,9 +63,9 @@ public class ChatHook extends TimerTask {
                     if (reader.ready()) {
                         line = reader.readLine();
 
-                        // Make sure line is not from msg
+                        // Make sure input line is not from messages and does not contain unwanted things from MCC
                         if (!line.contains(">> ") && !line.contains("Link: ") && !line.contains("### Log started at ")) {
-                            chatLook();
+                            chatLook(line);
                         }
                     }
                 } catch (IOException e) {
@@ -84,8 +79,7 @@ public class ChatHook extends TimerTask {
             e.printStackTrace();
         }
     }
-    public synchronized void chatLook() {
-        minecraftChat = line;
+    public synchronized void chatLook(String minecraftChat) {
 
         //check if chat contain these critical lines to then alert maintainer
         if (minecraftChat.contains("Connection has been lost.")) {
@@ -116,7 +110,6 @@ public class ChatHook extends TimerTask {
         market.run(); //add market chat filter
         sharpen.run(); //add sharpen chat filter
         vote.run(); //add vote chat filter
-        list.run(); //add player-list command
         channel.run(); //send message to chat channel
 
         /* MW Event Chat Searcher/Filter */

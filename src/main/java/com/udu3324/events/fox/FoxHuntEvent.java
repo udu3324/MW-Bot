@@ -7,7 +7,7 @@ import com.udu3324.main.FixString;
 import java.util.Date;
 import java.util.Objects;
 
-public class FoxEvent {
+public class FoxHuntEvent {
     public synchronized void run() {
         if (ChatHook.getMcChat().equals("Fox hunt begins in 30 minutes.")) {
             Data.fox.sendMessage("|| " + Data.pingFox + " ||").queue();

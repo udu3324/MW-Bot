@@ -6,7 +6,7 @@ import com.udu3324.main.Data;
 import java.util.Date;
 import java.util.Objects;
 
-public class GiantEvent {
+public class AttackOnGiantEvent {
     public synchronized void run() {
         if (ChatHook.getMcChat().equals("Attack on Giant begins in 30 minutes.")) {
             Data.attack.sendMessage("|| " + Data.pingAttack + " ||").queue();

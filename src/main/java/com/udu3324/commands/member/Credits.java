@@ -17,7 +17,7 @@ public class Credits extends ListenerAdapter {
         if (credits.getContentRaw().equals(Data.command + "credits")) {
             EmbedBuilder eb = new EmbedBuilder();
             eb.setTitle("Credits");
-            eb.setDescription("<@395649963415306242>  - Coder and made castle assets and old bait assets\n" +
+            eb.setDescription("<@395649963415306242> - Coder and made castle assets and old bait assets\n" +
                     "<@568165536811188224> - Big advertiser and secretly lexi\n" +
                     "<@311988970777083904> - Big advertiser and asset maker\n" +
                     "<@217806943765528577> - Assists in helping fix issues and code\n" +

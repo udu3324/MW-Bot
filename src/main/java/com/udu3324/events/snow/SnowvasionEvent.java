@@ -6,7 +6,7 @@ import com.udu3324.main.Data;
 import java.util.Date;
 import java.util.Objects;
 
-public class SnowEvent {
+public class SnowvasionEvent {
     public synchronized void run() {
         if (ChatHook.getMcChat().equals("Snowmen invade the spawn!")) {
             Data.snow.sendMessage("|| " + Data.pingSnow + " ||").queue();

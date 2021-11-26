@@ -3,27 +3,21 @@ package com.udu3324.main;
 public class FixString {
     //basically takes a string and adds a \ to make the _ character not format in discord.
     public static String fix(String str) {
-        //check if string contains it
+        StringBuilder strFix = new StringBuilder(str);
         if (str.contains("_")) {
-            StringBuilder stringFix = new StringBuilder(str);
-            int underscoreIndex;
-            int underscores;
-            //find the number of underscores
-            underscores = str.length() - str.replace("_", "").length();
-            underscoreIndex = stringFix.indexOf("_");
+            int underscores = str.length() - str.replace("_", "").length(); //int of how many _ in str
+            int underscoreIndex = strFix.indexOf("_"); //int of _ index
             if (underscores > 1) {
                 int count = 0;
-                do {
-                    //on each underscore index given, insert a \
-                    stringFix.insert(underscoreIndex, "\\");
-                    underscoreIndex = stringFix.indexOf("_", underscoreIndex + 2);
+                do { //replace _ with \_ on each _ in str
+                    strFix.insert(underscoreIndex, "\\");
+                    underscoreIndex = strFix.indexOf("_", underscoreIndex + 2);
                     count++;
                 } while (count != underscores);
-            } else {
-                stringFix.insert(underscoreIndex, "\\");
+            } else {  //replace _ with \_ in str
+                strFix.insert(underscoreIndex, "\\");
             }
-            str = stringFix.toString();
         }
-        return str;
+        return strFix.toString();
     }
 }

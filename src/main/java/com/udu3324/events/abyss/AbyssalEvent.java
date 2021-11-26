@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class AbyssEvent {
+public class AbyssalEvent {
     public synchronized void run() {
         if (ChatHook.getMcChat().equals("Abyssal event begins in 30 minutes.")) {
             Data.abyss.sendMessage("|| " + Data.pingAbyss + " ||").queue();

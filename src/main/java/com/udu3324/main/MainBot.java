@@ -26,7 +26,7 @@ public class MainBot {
         // Discord Bot Builder
         JDABuilder
                 .createLight(Token.token, GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
-                .addEventListeners(new ReadyListener(), new Info(), new Rules(), new PlayerList(), new Ping(), new Credits(), new Help())
+                .addEventListeners(new ReadyListener(), new Info(), new Rules(), new Ping(), new Credits(), new Help())
                 .setActivity(Activity.playing(Data.activity))
                 .build();
     }
