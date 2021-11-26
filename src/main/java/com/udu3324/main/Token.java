@@ -1,5 +1,6 @@
 package com.udu3324.main;
 
 public class Token {
-    public static String token                     = "";
+    //set private token in another class
+    public static final String token = "";
 }
