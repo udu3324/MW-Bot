@@ -44,7 +44,8 @@ public class ChatHook extends TimerTask {
     String tailerCmd;
     {
         if (System.getProperty("os.name").contains("Linux")) {
-            tailerCmd = "todo command"; //todo, does not work
+            System.out.println("Linux detected.");
+            tailerCmd = "tail -f " + Data.logFile;
         } else if (System.getProperty("os.name").contains("Windows")) {
             tailerCmd = "powershell.exe Get-Content \"" + Data.logFile + "\" -Wait -Tail 1";
         }
