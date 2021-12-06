@@ -29,8 +29,12 @@ class ReadyListener extends ListenerAdapter {
         // Create UI
         new BotUI();
 
-        // Create Chathook
+        // Create ChatHook
         ChatHook object = new ChatHook();
-        object.run();
+
+        // Create Thread
+        Thread logHook = new Thread(object, "ChatHook that hooks onto mc chat");
+        logHook.setDaemon(true);
+        logHook.start();
     }
 }

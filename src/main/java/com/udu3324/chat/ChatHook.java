@@ -9,21 +9,18 @@ import com.udu3324.events.snow.SnowvasionEvent;
 import com.udu3324.main.Data;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 import java.util.TimerTask;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 public class ChatHook extends TimerTask {
     public static String line;
-    public static String minecraftChat;
+    public static String mcChatReq;
     public static Integer count;
     public static String IGNString;
     public static String getMcChat() {
-        return minecraftChat;
+        return mcChatReq;
     }
     public static Integer getCount() {
         return count;
@@ -41,13 +38,12 @@ public class ChatHook extends TimerTask {
     BaitEvent bait = new BaitEvent();
     CastleEvent castle = new CastleEvent();
 
-    String tailerCmd;
+    String[] tailerCmd;
     {
         if (System.getProperty("os.name").contains("Linux")) {
-            System.out.println("Linux detected.");
-            tailerCmd = "tail -f " + Data.logFile;
+            tailerCmd = new String[] { "tail", "-f","-n" ,"1" , Data.logFile };
         } else if (System.getProperty("os.name").contains("Windows")) {
-            tailerCmd = "powershell.exe Get-Content \"" + Data.logFile + "\" -Wait -Tail 1";
+            tailerCmd = new String[] {"powershell.exe", "Get-Content" ,"\"" + Data.logFile + "\"", "-Wait", "-Tail", "1"};
         }
     }
 
@@ -56,30 +52,19 @@ public class ChatHook extends TimerTask {
             //run tailer command and read from it
             Runtime run = Runtime.getRuntime();
             Process process = run.exec(tailerCmd);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            Scanner reader = new Scanner(new InputStreamReader(process.getInputStream()));
 
-            //basically a while replacement as I hate while statements
-            Runnable chatHook = () -> {
-                try {
-                    if (reader.ready()) {
-                        line = reader.readLine();
-
-                        // Make sure input line is not from messages and does not contain unwanted things from MCC
-                        if (!line.contains(">> ") && !line.contains("Link: ") && !line.contains("### Log started at ")) {
-                            chatLook(line);
-                        }
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
+            while (reader.hasNextLine()) {
+                line = reader.nextLine();
+                if (!line.contains(">> ") && !line.contains("Link: ") && !line.contains("### Log started at ")) {
+                    chatLook(line);
                 }
-            };
-
-            ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
-            executor.scheduleAtFixedRate(chatHook, 0, 1, TimeUnit.NANOSECONDS);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     public synchronized void chatLook(String minecraftChat) {
 
         //check if chat contain these critical lines to then alert maintainer
@@ -98,6 +83,9 @@ public class ChatHook extends TimerTask {
 
         /* Counter For ":" */
         count = StringUtils.countMatches(minecraftChat, ":");
+
+        /* Save minecraftChat for requests in other classes */
+        mcChatReq = minecraftChat;
 
         /* IGN String Finder */
         String chatIGN = minecraftChat;
