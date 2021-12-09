@@ -23,13 +23,13 @@ repositories {
 
 dependencies {
     implementation 'org.apache.commons:commons-lang3:3.12.0'
-    implementation 'net.dv8tion:JDA:4.3.0_277'
+    implementation 'net.dv8tion:JDA:4.4.0_351'
     implementation 'org.slf4j:slf4j-simple:2.0.0-alpha4'
     implementation 'com.intellij:forms_rt:7.0.3'
 }
 
 application {
-    mainClass.set('com.udu3324.main.MainBot')
+    getMainClass().set('com.udu3324.main.MainBot')
 }
 
 task testJar(type: Jar) {
