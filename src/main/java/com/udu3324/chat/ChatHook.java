@@ -19,12 +19,8 @@ public class ChatHook extends TimerTask {
     public static String mcChatReq;
     public static Integer count;
     public static String IGNString;
-    public static String getMcChat() {
-        return mcChatReq;
-    }
-    public static Integer getCount() {
-        return count;
-    }
+    public static String getMcChat() {return mcChatReq;}
+    public static Integer getCount() {return count;}
 
     MarketChat market = new MarketChat();
     SharpenChat sharpen = new SharpenChat();
@@ -70,12 +66,10 @@ public class ChatHook extends TimerTask {
         //check if chat contain these critical lines to then alert maintainer
         if (minecraftChat.contains("Connection has been lost.")) {
             Data.chat.sendMessage("Bot has lost connection to the server. " + Data.pingMaintainer).queue();
-        } else if (minecraftChat.contains("Logging in...")) {
-            Data.chat.sendMessage("Bot is currently logging into the server. " + Data.pingMaintainer).queue();
-        } else if (minecraftChat.contains("Server was successfully joined.")) {
-            Data.chat.sendMessage("Bot has successfully joined the server. " + Data.pingMaintainer).queue();
         } else if (minecraftChat.contains("Disconnected by Server :")) {
             Data.chat.sendMessage("Bot has lost connection to the server. " + Data.pingMaintainer).queue();
+        } else if (minecraftChat.contains("Server was successfully joined.")) {
+            Data.chat.sendMessage("Bot has successfully joined the server. " + Data.pingMaintainer).queue();
         }
 
         /* Discord Syntax Injection Patch */
@@ -108,19 +102,16 @@ public class ChatHook extends TimerTask {
                 if (minecraftChat.contains("Queued as")) {
                     Data.chat.sendMessage(Data.pingMaintainer + ", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
                 }
-                if (minecraftChat.contains("Queue=")) {
-                    Data.chat.sendMessage(Data.pingMaintainer + ", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
-                }
                 if (minecraftChat.contains("Reconnecting...")) {
                     Data.chat.sendMessage(Data.pingMaintainer + ", the bot is reconnecting into the server.").queue();
                 }
 
-                giant.run(); //good
-                snow.run(); //good
-                abyss.run(); //good
-                fox.run(); //good
-                bait.run(); //good
-                castle.run(); //good
+                giant.run();
+                snow.run();
+                abyss.run();
+                fox.run();
+                bait.run();
+                castle.run();
             }
         }
     }

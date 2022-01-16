@@ -9,10 +9,14 @@ public class MarketChat {
     public String scan;
 
     private static void send(String message) {
-        //50 50 chance to send the market msg. this is to kinda stop spam and make my bot have less rate limits
+        // chance to send the market msg. this is to kinda stop spam and make my bot have less rate limits
         Random rd = new Random();
         if (rd.nextBoolean()) {
-            Data.market.sendMessage(message).queue();
+            if (rd.nextBoolean()) {
+                if (rd.nextBoolean()) {
+                    Data.market.sendMessage(message).queue();
+                }
+            }
         }
     }
 

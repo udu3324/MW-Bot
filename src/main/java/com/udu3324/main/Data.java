@@ -2,8 +2,6 @@ package com.udu3324.main;
 
 import net.dv8tion.jda.api.entities.TextChannel;
 
-import java.io.File;
-
 public class Data {
     /* Assets */
     public static final String icon = "/icon.png";
