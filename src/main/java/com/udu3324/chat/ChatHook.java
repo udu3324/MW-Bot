@@ -2,6 +2,7 @@ package com.udu3324.chat;
 
 import com.udu3324.events.abyss.AbyssalEvent;
 import com.udu3324.events.bait.BaitEvent;
+import com.udu3324.events.beef.BeefEvent;
 import com.udu3324.events.castle.CastleEvent;
 import com.udu3324.events.fox.FoxHuntEvent;
 import com.udu3324.events.giant.AttackOnGiantEvent;
@@ -27,6 +28,7 @@ public class ChatHook extends TimerTask {
     VoteChat vote = new VoteChat();
     ChannelChat channel = new ChannelChat();
 
+    BeefEvent beef = new BeefEvent();
     AttackOnGiantEvent giant = new AttackOnGiantEvent();
     SnowvasionEvent snow = new SnowvasionEvent();
     AbyssalEvent abyss = new AbyssalEvent();
@@ -106,6 +108,7 @@ public class ChatHook extends TimerTask {
                     Data.chat.sendMessage(Data.pingMaintainer + ", the bot is reconnecting into the server.").queue();
                 }
 
+                beef.run();
                 giant.run();
                 snow.run();
                 abyss.run();
