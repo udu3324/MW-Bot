@@ -9,6 +9,14 @@ import java.util.Objects;
 
 public class FoxHuntEvent {
     public synchronized void run() {
+        if (ChatHook.getMcChat().equals("Fox hunt begins in 1 hour.")) {
+            Data.fox.sendMessage("|| " + Data.pingFox + " ||").queue();
+            FoxVar.fox1hr.setTimestamp(new Date().toInstant());
+            Data.fox.sendMessageEmbeds(FoxVar.fox1hr.build())
+                    .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.foxSoonIcon)), "image.png")
+                    .queue(message -> message.crosspost().queue());
+            Data.rawAlert.sendMessage("`" + "Fox Hunt begins in 1hr. " + "`" + Data.pingFox).queue(message -> message.crosspost().queue());
+        }
         if (ChatHook.getMcChat().equals("Fox hunt begins in 30 minutes.")) {
             Data.fox.sendMessage("|| " + Data.pingFox + " ||").queue();
             FoxVar.fox30m.setTimestamp(new Date().toInstant());

@@ -6,6 +6,7 @@ import java.awt.*;
 
 public class AbyssVar {
     //Abyssal
+    protected static final EmbedBuilder abyss1hr = new EmbedBuilder();
     protected static final EmbedBuilder abyss30m = new EmbedBuilder();
     protected static final EmbedBuilder abyss20m = new EmbedBuilder();
     protected static final EmbedBuilder abyss10m = new EmbedBuilder();
@@ -16,6 +17,11 @@ public class AbyssVar {
     protected static final EmbedBuilder abyssEnd = new EmbedBuilder();
 
     static {
+        abyss1hr.setDescription("Abyssal event begins in 1 hour.");
+        abyss1hr.setColor(new Color(0x0537D6));
+        abyss1hr.setAuthor("Abyssal", null, null);
+        abyss1hr.setImage("attachment://image.png");
+
         abyss30m.setDescription("Abyssal event begins in 30 minutes.");
         abyss30m.setColor(new Color(0x0537D6));
         abyss30m.setAuthor("Abyssal", null, null);

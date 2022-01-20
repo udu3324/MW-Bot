@@ -11,6 +11,14 @@ import java.util.TimerTask;
 
 public class AbyssalEvent {
     public synchronized void run() {
+        if (ChatHook.getMcChat().equals("Abyssal event begins in 1 hour.")) {
+            Data.abyss.sendMessage("|| " + Data.pingAbyss + " ||").queue();
+            AbyssVar.abyss1hr.setTimestamp(new Date().toInstant());
+            Data.abyss.sendMessageEmbeds(AbyssVar.abyss1hr.build())
+                    .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.abyssSoonIcon)), "image.png")
+                    .queue(message -> message.crosspost().queue());
+            Data.rawAlert.sendMessage("`" + "Abyssal begins in 1hr. " + "`" + Data.pingAbyss).queue(message -> message.crosspost().queue());
+        }
         if (ChatHook.getMcChat().equals("Abyssal event begins in 30 minutes.")) {
             Data.abyss.sendMessage("|| " + Data.pingAbyss + " ||").queue();
             AbyssVar.abyss30m.setTimestamp(new Date().toInstant());

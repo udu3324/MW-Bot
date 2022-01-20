@@ -11,6 +11,14 @@ import java.util.TimerTask;
 
 public class BaitEvent {
     public synchronized void run() {
+        if (ChatHook.getMcChat().equals("Fishing event begins in 1 hour.")) {
+            Data.bait.sendMessage("|| " + Data.pingBait + " ||").queue();
+            BaitVar.bait1hr.setTimestamp(new Date().toInstant());
+            Data.bait.sendMessageEmbeds(BaitVar.bait1hr.build())
+                    .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.baitSoonIcon)), "image.png")
+                    .queue(message -> message.crosspost().queue());
+            Data.rawAlert.sendMessage("`" + "Bait begins in 1hr. " + "`" + Data.pingBait).queue(message -> message.crosspost().queue()); //send raw
+        }
         if (ChatHook.getMcChat().equals("Fishing event begins in 30 minutes.")) {
             Data.bait.sendMessage("|| " + Data.pingBait + " ||").queue();
             BaitVar.bait30m.setTimestamp(new Date().toInstant());

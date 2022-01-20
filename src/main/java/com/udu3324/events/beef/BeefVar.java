@@ -6,6 +6,7 @@ import java.awt.*;
 
 public class BeefVar {
     //beef
+    protected static final EmbedBuilder beef1hr = new EmbedBuilder();
     protected static final EmbedBuilder beef30m = new EmbedBuilder();
     protected static final EmbedBuilder beef20m = new EmbedBuilder();
     protected static final EmbedBuilder beef10m = new EmbedBuilder();
@@ -16,6 +17,11 @@ public class BeefVar {
     protected static final EmbedBuilder beefEnd = new EmbedBuilder();
 
     static {
+        beef1hr.setDescription("Beef Event begins in 1 hour.");
+        beef1hr.setColor(new Color(0x673728));
+        beef1hr.setAuthor("Beef", null, null);
+        beef1hr.setImage("attachment://image.png");
+
         beef30m.setDescription("Beef Event begins in 30 minutes.");
         beef30m.setColor(new Color(0x673728));
         beef30m.setAuthor("Beef", null, null);

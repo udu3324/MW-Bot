@@ -6,6 +6,7 @@ import java.awt.*;
 
 public class BaitVar {
     //Bait
+    protected static final EmbedBuilder bait1hr = new EmbedBuilder();
     protected static final EmbedBuilder bait30m = new EmbedBuilder();
     protected static final EmbedBuilder bait20m = new EmbedBuilder();
     protected static final EmbedBuilder bait10m = new EmbedBuilder();
@@ -22,6 +23,11 @@ public class BaitVar {
     protected static String bait3rdPlaceRaw;
 
     static {
+        bait1hr.setDescription("Fishing event begins in 1 hour.");
+        bait1hr.setColor(new Color(0x001E9A));
+        bait1hr.setAuthor("Bait", null, null);
+        bait1hr.setImage("attachment://image.png");
+
         bait30m.setDescription("Fishing event begins in 30 minutes.");
         bait30m.setColor(new Color(0x001E9A));
         bait30m.setAuthor("Bait", null, null);

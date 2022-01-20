@@ -12,6 +12,14 @@ import java.util.regex.Pattern;
 
 public class BeefEvent {
     public synchronized void run() {
+        if (ChatHook.getMcChat().equals("Beef Event begins in 1 hour.")) {
+            Data.beef.sendMessage("|| " + Data.pingBeef + " ||").queue();
+            BeefVar.beef1hr.setTimestamp(new Date().toInstant());
+            Data.beef.sendMessageEmbeds(BeefVar.beef1hr.build())
+                    .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.beefSoonIcon)), "image.png")
+                    .queue(message -> message.crosspost().queue());
+            Data.rawAlert.sendMessage("`" + "Beef begins in 1hr. " + "`" + Data.pingBeef).queue(message -> message.crosspost().queue()); //send raw
+        }
         if (ChatHook.getMcChat().equals("Beef Event begins in 30 minutes.")) {
             Data.beef.sendMessage("|| " + Data.pingBeef + " ||").queue();
             BeefVar.beef30m.setTimestamp(new Date().toInstant());

@@ -6,6 +6,7 @@ import java.awt.*;
 
 public class FoxVar {
     //Fox
+    protected static final EmbedBuilder fox1hr = new EmbedBuilder();
     protected static final EmbedBuilder fox30m = new EmbedBuilder();
     protected static final EmbedBuilder fox20m = new EmbedBuilder();
     protected static final EmbedBuilder fox10m = new EmbedBuilder();
@@ -24,6 +25,11 @@ public class FoxVar {
     protected static String fox3rdPlaceRaw;
 
     static {
+        fox1hr.setDescription("Fox hunt begins in 1 hour.");
+        fox1hr.setColor(new Color(0xF5E78F));
+        fox1hr.setAuthor("Fox Hunt", null, null);
+        fox1hr.setImage("attachment://image.png");
+
         fox30m.setDescription("Fox hunt begins in 30 minutes.");
         fox30m.setColor(new Color(0xF5E78F));
         fox30m.setAuthor("Fox Hunt", null, null);

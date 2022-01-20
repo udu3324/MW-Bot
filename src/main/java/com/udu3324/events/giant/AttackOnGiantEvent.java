@@ -8,6 +8,14 @@ import java.util.Objects;
 
 public class AttackOnGiantEvent {
     public synchronized void run() {
+        if (ChatHook.getMcChat().equals("Attack on Giant begins in 1 hour.")) {
+            Data.attack.sendMessage("|| " + Data.pingAttack + " ||").queue();
+            GiantVar.attack1hr.setTimestamp(new Date().toInstant());
+            Data.attack.sendMessageEmbeds(GiantVar.attack1hr.build())
+                    .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.giantSoonIcon)), "image.png")
+                    .queue(message -> message.crosspost().queue());
+            Data.rawAlert.sendMessage("`" + "Attack on Giant begins in 1hr. " + "`" + Data.pingAttack).queue(message -> message.crosspost().queue());
+        }
         if (ChatHook.getMcChat().equals("Attack on Giant begins in 30 minutes.")) {
             Data.attack.sendMessage("|| " + Data.pingAttack + " ||").queue();
             GiantVar.attack30m.setTimestamp(new Date().toInstant());
