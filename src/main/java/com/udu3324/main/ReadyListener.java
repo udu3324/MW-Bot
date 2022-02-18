@@ -26,6 +26,7 @@ class ReadyListener extends ListenerAdapter {
         Data.market = Objects.requireNonNull(jda.getGuildById(Data.guildID)).getTextChannelById(Data.channelMarket);
         Data.sharpen = Objects.requireNonNull(jda.getGuildById(Data.guildID)).getTextChannelById(Data.channelSharpen);
         Data.votes = Objects.requireNonNull(jda.getGuildById(Data.guildID)).getTextChannelById(Data.channelVotes);
+        Data.newFriend = Objects.requireNonNull(jda.getGuildById(Data.guildID)).getTextChannelById(Data.channelNewFriend);
 
         // Create UI
         new BotUI();

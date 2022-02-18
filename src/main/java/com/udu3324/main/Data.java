@@ -52,6 +52,7 @@ public class Data {
     public static final String channelMarket = "863979270380453898";
     public static final String channelSharpen = "863979288763170817";
     public static final String channelVotes = "870454989544386590";
+    public static final String channelNewFriend = "944018846791127060";
     public static final String guildID = "863975877205032960";
 
     //public static String pingEvent = "";
@@ -77,4 +78,5 @@ public class Data {
     public static TextChannel market;
     public static TextChannel sharpen;
     public static TextChannel votes;
+    public static TextChannel newFriend;
 }

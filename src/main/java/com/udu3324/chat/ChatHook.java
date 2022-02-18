@@ -27,6 +27,7 @@ public class ChatHook extends TimerTask {
     SharpenChat sharpen = new SharpenChat();
     VoteChat vote = new VoteChat();
     ChannelChat channel = new ChannelChat();
+    NewFriendChat newFriend = new NewFriendChat();
 
     BeefEvent beef = new BeefEvent();
     AttackOnGiantEvent giant = new AttackOnGiantEvent();
@@ -96,6 +97,7 @@ public class ChatHook extends TimerTask {
         sharpen.run(); //add sharpen chat filter
         vote.run(); //add vote chat filter
         channel.run(); //send message to chat channel
+        newFriend.run(); //add new friend chat filter
 
         /* MW Event Chat Searcher/Filter */
         System.out.println("c" + count + " | " + minecraftChat);
