@@ -65,6 +65,8 @@ public class ChatHook extends TimerTask {
     }
 
     public synchronized void chatLook(String minecraftChat) {
+        //return if chat received is somehow empty and stop exceptions
+        if (minecraftChat.isEmpty()) return;
 
         //check if chat contain these critical lines to then alert maintainer
         if (minecraftChat.contains("Connection has been lost.")) {

@@ -8,7 +8,7 @@ public class NewFriendChat {
         String chatFriends = ChatHook.getMcChat();
         int count = StringUtils.countMatches(chatFriends, ":");
         //if chat contains a vote, send it
-        if (chatFriends.contains("Welcome newfriend ") && count == 0 && !chatFriends.contains("*") && chatFriends.length() <= 34) {
+        if (chatFriends.contains("Welcome newfriend ") && count == 0 && chatFriends.length() < 36) {
             Data.newFriend.sendMessage("```" + chatFriends + "```").queue(message -> message.crosspost().queue());
         }
     }
