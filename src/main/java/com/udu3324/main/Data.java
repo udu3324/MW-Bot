@@ -40,6 +40,7 @@ public class Data {
     public static final String staffRoleID = "863977201324785685";
 
     //public static String eventChannelNameOfEvent = "channelID";
+    public static final String channelLabyrinth = "969053026625126410";
     public static final String channelBeef = "933367060682125362";
     public static final String channelAttackOnGiant = "863975877648711691";
     public static final String channelSnowvasion = "863978973138124810";
@@ -56,6 +57,7 @@ public class Data {
     public static final String guildID = "863975877205032960";
 
     //public static String pingEvent = "";
+    public static final String pingLabyrinth = "<@&969059479666700298>";
     public static final String pingBeef = "<@&933493801954209813>";
     public static final String pingAttack = "<@&863991934988058624>";
     public static final String pingSnow = "<@&863992054593093662>";
@@ -66,6 +68,7 @@ public class Data {
     public static final String pingMaintainer = "<@395649963415306242>";
 
     //public static TextChannel nameOfEvent;
+    public static TextChannel labyrinth;
     public static TextChannel beef;
     public static TextChannel attack;
     public static TextChannel snow;

@@ -6,6 +6,7 @@ import com.udu3324.events.beef.BeefEvent;
 import com.udu3324.events.castle.CastleEvent;
 import com.udu3324.events.fox.FoxHuntEvent;
 import com.udu3324.events.giant.AttackOnGiantEvent;
+import com.udu3324.events.labyrinth.LabyrinthEvent;
 import com.udu3324.events.snow.SnowvasionEvent;
 import com.udu3324.main.Data;
 import org.apache.commons.lang3.StringUtils;
@@ -29,6 +30,7 @@ public class ChatHook extends TimerTask {
     ChannelChat channel = new ChannelChat();
     NewFriendChat newFriend = new NewFriendChat();
 
+    LabyrinthEvent labyrinth = new LabyrinthEvent();
     BeefEvent beef = new BeefEvent();
     AttackOnGiantEvent giant = new AttackOnGiantEvent();
     SnowvasionEvent snow = new SnowvasionEvent();
@@ -112,6 +114,7 @@ public class ChatHook extends TimerTask {
                     Data.chat.sendMessage(Data.pingMaintainer + ", the bot is reconnecting into the server.").queue();
                 }
 
+                labyrinth.run();
                 beef.run();
                 giant.run();
                 snow.run();

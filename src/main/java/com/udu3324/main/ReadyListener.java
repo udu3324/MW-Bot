@@ -14,6 +14,7 @@ class ReadyListener extends ListenerAdapter {
         JDA jda = ev.getJDA(); // This JDA instance is fully built, so do more stuff with this JDA instance
 
         // Set Channels
+        Data.labyrinth = Objects.requireNonNull(jda.getGuildById(Data.guildID)).getTextChannelById(Data.channelLabyrinth);
         Data.beef = Objects.requireNonNull(jda.getGuildById(Data.guildID)).getTextChannelById(Data.channelBeef);
         Data.attack = Objects.requireNonNull(jda.getGuildById(Data.guildID)).getTextChannelById(Data.channelAttackOnGiant);
         Data.snow = Objects.requireNonNull(jda.getGuildById(Data.guildID)).getTextChannelById(Data.channelSnowvasion);
