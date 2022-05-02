@@ -55,11 +55,11 @@ public class LabyrinthVar {
         labyrinthStart.setDescription("Labyrinth Event has started!");
         labyrinthStart.setColor(new Color(0xb9b9b9));
         labyrinthStart.setAuthor("Labyrinth", null, null);
-        //labyrinthStart.setImage("attachment://image.gif");
+        labyrinthStart.setImage("attachment://image.gif");
 
         labyrinthEnd.setDescription("Labyrinth Event has ended.");
         labyrinthEnd.setColor(new Color(0xb9b9b9));
         labyrinthEnd.setAuthor("Labyrinth", null, null);
-        //labyrinthEnd.setImage("attachment://image.gif");
+        labyrinthEnd.setImage("attachment://image.gif");
     }
 }

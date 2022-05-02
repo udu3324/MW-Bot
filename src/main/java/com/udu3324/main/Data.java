@@ -6,6 +6,8 @@ public class Data {
     /* Assets */
     public static final String icon = "/icon.png";
     public static final String icon2 = "/icon2.png";
+    public static final String labyrinthStartIcon = "/labyrinth_Start.gif";
+    public static final String labyrinthEndIcon = "/labyrinth_End.gif";
     public static final String beefSoonIcon = "/beef_soon_upscale.png";
     public static final String beefStartIcon = "/beef_start_upscale.png";
     public static final String beefEndIcon = "/beef_end_upscale.png";

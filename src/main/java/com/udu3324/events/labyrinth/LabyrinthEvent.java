@@ -4,6 +4,7 @@ import com.udu3324.chat.ChatHook;
 import com.udu3324.main.Data;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class LabyrinthEvent {
     public synchronized void run() {
@@ -66,14 +67,14 @@ public class LabyrinthEvent {
             Data.labyrinth.sendMessage("|| " + Data.pingLabyrinth + " ||").queue();
             LabyrinthVar.labyrinthStart.setTimestamp(new Date().toInstant());
             Data.labyrinth.sendMessageEmbeds(LabyrinthVar.labyrinthStart.build())
-                    //.addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.labyrinthStartIcon)), "image.gif")
+                    .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.labyrinthStartIcon)), "image.gif")
                     .queue(message -> message.crosspost().queue());
             Data.rawAlert.sendMessage("`" + "Labyrinth has started! " + "`" + Data.pingLabyrinth).queue(message -> message.crosspost().queue());
         }
         if (ChatHook.getMcChat().equals("Labyrinth event has ended!")) {
             LabyrinthVar.labyrinthEnd.setTimestamp(new Date().toInstant());
             Data.labyrinth.sendMessageEmbeds(LabyrinthVar.labyrinthEnd.build())
-                    //.addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.labyrinthEndIcon)), "image.gif")
+                    .addFile(Objects.requireNonNull(this.getClass().getResourceAsStream(Data.labyrinthEndIcon)), "image.gif")
                     .queue(message -> message.crosspost().queue());
             Data.rawAlert.sendMessage("`" + "Labyrinth has ended. " + "`").queue(message -> message.crosspost().queue());
         }
