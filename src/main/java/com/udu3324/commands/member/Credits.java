@@ -33,7 +33,7 @@ public class Credits extends ListenerAdapter {
             eb.setFooter("Bot by NintendoOS | https://discord.gg/WWEvMGUKhY", null);
             eb.setAuthor("MW Event Bot", null, "https://i.imgur.com/5hL08HS.png");
             MessageChannel channel = event.getChannel();
-            channel.sendMessage(eb.build()).queue();
+            channel.sendMessageEmbeds(eb.build()).queue();
         }
     }
 }

@@ -32,7 +32,7 @@ public class Help extends ListenerAdapter {
                     Data.command + "**rules** - shows rules embed\n" +
                             Data.command + "**info** - shows information embed", false);
             MessageChannel channel = event.getChannel();
-            channel.sendMessage(eb.build()).queue();
+            channel.sendMessageEmbeds(eb.build()).queue();
         }
     }
 }

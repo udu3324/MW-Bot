@@ -36,7 +36,7 @@ public class Rules extends ListenerAdapter {
                     eb.setColor(new Color(9507588));
                     eb.setTimestamp(new Date().toInstant());
                     eb.setAuthor("MW Event Bot", null, "https://i.imgur.com/5hL08HS.png");
-                    channel.sendMessage(eb.build()).queue();
+                    channel.sendMessageEmbeds(eb.build()).queue();
                     rules.delete().queueAfter(3, TimeUnit.SECONDS);
                 } else {
                     channel.sendMessage("You do not have access to this command.").queue();
