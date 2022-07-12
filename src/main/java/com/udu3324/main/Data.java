@@ -36,7 +36,13 @@ public class Data {
     //C:/Users/build/Desktop/MultiMC/instances/1.16.51/.minecraft/logs/latest.log
     //C:/Users/build/Desktop/MultiMC/instances/1.17.1/.minecraft/logs/latest.log
     //latest.log if file is in directory
-    public static final String logFile = "latest.log";
+
+
+
+    public static final String logFile = "C:\\Users\\server\\Desktop\\server\\MultiMC\\instances\\1.19 Minewind\\.minecraft\\logs\\latest.log";
+    
+    
+    
     public static final String activity = "play.minewind.net";
     public static final String command = ">";
     public static final String staffRoleID = "863977201324785685";
