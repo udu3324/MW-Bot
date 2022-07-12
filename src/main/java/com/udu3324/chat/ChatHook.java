@@ -11,9 +11,9 @@ import com.udu3324.events.snow.SnowvasionEvent;
 import com.udu3324.main.Data;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 import java.util.TimerTask;
 
 public class ChatHook extends TimerTask {
@@ -21,8 +21,14 @@ public class ChatHook extends TimerTask {
     public static String mcChatReq;
     public static Integer count;
     public static String IGNString;
-    public static String getMcChat() {return mcChatReq;}
-    public static Integer getCount() {return count;}
+
+    public static String getMcChat() {
+        return mcChatReq;
+    }
+
+    public static Integer getCount() {
+        return count;
+    }
 
     MarketChat market = new MarketChat();
     SharpenChat sharpen = new SharpenChat();
@@ -42,35 +48,43 @@ public class ChatHook extends TimerTask {
     String[] tailerCmd;
     {
         if (System.getProperty("os.name").contains("Linux")) {
-            tailerCmd = new String[] { "tail", "-f","-n" ,"1" , Data.logFile };
+            tailerCmd = new String[] { "tail", "-f", "-n", "1", Data.logFile };
         } else if (System.getProperty("os.name").contains("Windows")) {
-            tailerCmd = new String[] {"powershell.exe", "Get-Content" ,"\"" + Data.logFile + "\"", "-Wait", "-Tail", "1"};
+            tailerCmd = new String[] { "powershell.exe", "Get-Content", "'" + Data.logFile + "'", "-Wait", "-Tail",
+                    "1" };
         }
     }
 
     public synchronized void run() {
         try {
-            //run tailer command and read from it
-            Runtime run = Runtime.getRuntime();
-            Process process = run.exec(tailerCmd);
-            Scanner reader = new Scanner(new InputStreamReader(process.getInputStream()));
+            Runtime rt = Runtime.getRuntime();
+            Process proc = rt.exec(tailerCmd);
 
-            while (reader.hasNextLine()) {
-                line = reader.nextLine();
-                if (!line.contains(">> ") && !line.contains("Link: ") && !line.contains("### Log started at ")) {
-                    chatLook(line);
-                }
+            BufferedReader stdInput = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+            BufferedReader stdError = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
+
+            // Read the output from the command
+            String s = null;
+            while ((s = stdInput.readLine()) != null) {
+                chatLook(s);
             }
+
+            // Read any errors from the attempted command
+            while ((s = stdError.readLine()) != null) {
+                chatLook(s);
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public synchronized void chatLook(String minecraftChat) {
-        //return if chat received is somehow empty and stop exceptions
-        if (minecraftChat.isEmpty()) return;
+        // return if chat received is somehow empty and stop exceptions
+        if (minecraftChat.isEmpty())
+            return;
 
-        //check if chat contain these critical lines to then alert maintainer
+        // check if chat contain these critical lines to then alert maintainer
         if (minecraftChat.contains("Connection has been lost.")) {
             Data.chat.sendMessage("Bot has lost connection to the server. " + Data.pingMaintainer).queue();
         } else if (minecraftChat.contains("Disconnected by Server :")) {
@@ -97,18 +111,21 @@ public class ChatHook extends TimerTask {
             IGNString = IGNStringClan.substring(positionOfPeriod + 1);
         }
 
-        market.run(); //add market chat filter
-        sharpen.run(); //add sharpen chat filter
-        vote.run(); //add vote chat filter
-        channel.run(); //send message to chat channel
-        newFriend.run(); //add new friend chat filter
+        market.run(); // add market chat filter
+        sharpen.run(); // add sharpen chat filter
+        vote.run(); // add vote chat filter
+        channel.run(); // send message to chat channel
+        newFriend.run(); // add new friend chat filter
 
         /* MW Event Chat Searcher/Filter */
         System.out.println("c" + count + " | " + minecraftChat);
         if (!minecraftChat.contains("*")) {
             if (count <= 0) {
                 if (minecraftChat.contains("Queued as")) {
-                    Data.chat.sendMessage(Data.pingMaintainer + ", the bot is currently in queue on the server to rejoin. " + minecraftChat).queue();
+                    Data.chat
+                            .sendMessage(Data.pingMaintainer
+                                    + ", the bot is currently in queue on the server to rejoin. " + minecraftChat)
+                            .queue();
                 }
                 if (minecraftChat.contains("Reconnecting...")) {
                     Data.chat.sendMessage(Data.pingMaintainer + ", the bot is reconnecting into the server.").queue();
